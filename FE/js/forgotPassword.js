@@ -1,4 +1,4 @@
-$(".sbt").click(function (e) {
+$("#btn-submit").click(function (e) {
   e.preventDefault();
   const result = {
     email: document.getElementById("email").value,
@@ -15,7 +15,7 @@ $(".sbt").click(function (e) {
   fetch("http://localhost:3000/api/v1/auth/forgetPassword", options)
     .then((response) => response.json()) // chuyển kết quả trả về thành json object
     .then((result) => {
-      $.notify(result.message, { position: "top center" });
+      alert(result.message);
     })
     .catch((error) => {
       console.error("Error:", error); // ghi log nếu xảy ra lỗi

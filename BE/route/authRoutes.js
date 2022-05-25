@@ -4,7 +4,7 @@ const authController = require("../controllers/authController");
 const { jwtAuth } = require("../middleware/jwtAuth");
 const { basicAuth } = require("../middleware/basicAuth");
 const { limiter } = require("../middleware/rateLimit");
-router.post("/register", basicAuth, authController.register);
+router.post("/register", authController.register);
 router.post("/login", authController.login);
 router.post("/forgetPassword", authController.forgetPassword);
 router.post("/updatePassword", authController.updatePassword);

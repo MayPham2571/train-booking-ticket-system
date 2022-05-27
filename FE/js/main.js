@@ -12,7 +12,7 @@ function parseJwt(token) {
 
   return JSON.parse(jsonPayload);
 }
-$(".btn").click(function (e) {
+$("#btn-submit").click(function (e) {
   e.preventDefault();
   const result = {
     email: document.getElementById("email").value,
@@ -30,10 +30,14 @@ $(".btn").click(function (e) {
   fetch("http://localhost:3000/api/v1/auth/login", options)
     .then((response) => response.json()) // chuyển kết quả trả về thành json object
     .then((result) => {
-      localStorage.setItem("token", result.token);
-      if (localStorage.getItem("token")) {
-        console.log(parseJwt(localStorage.getItem("token")).id);
-        window.location.href = "homepage.html";
+      if(!result.success){
+        alert(result.message); 
+      }else{
+        localStorage.setItem("token", result.token);
+        if (localStorage.getItem("token")) {
+          console.log(parseJwt(localStorage.getItem("token")).id);
+          window.location.href = "homepage.html";
+        }
       }
     })
     .catch((error) => {

@@ -7,7 +7,7 @@ const AccountSchema = new Schema(
     name: {
       type: String,
       required: [true, "Name is required"],
-      minlength: [3, "Must have at least 3 characters"],
+      minlength: [3, "Name must have at least 3 characters"],
     },
     email: {
       type: String,
@@ -35,8 +35,8 @@ const AccountSchema = new Schema(
     password: {
       type: String,
       required: [true, "Password is required"],
-      minlength: [6, "Must have at least 6 characters"],
-      maxlength: [30, "Must be less than 30 characters"],
+      minlength: [6, "Password must have at least 6 characters"],
+      maxlength: [30, "Password must be less than 30 characters"],
       match: [
         /^(?!.*\s)(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹])/,
         "Password must contain uppercase, special character, number",
@@ -49,8 +49,8 @@ const AccountSchema = new Schema(
     },
     idCard: {
       type: String,
-      minlength: [9, "Must have at least 9 characters"],
-      maxlength: [12, "Must be less than 12 characters"],
+      minlength: [9, "ID Card must have at least 9 characters"],
+      maxlength: [12, "ID Card must be less than 12 characters"],
       require: [true, "ID Card is required"],
       unique: true,
     },

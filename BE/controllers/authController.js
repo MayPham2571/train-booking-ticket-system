@@ -35,47 +35,53 @@ exports.login = catchAsync(async (req, res) => {
   const isMatch = bcrypt.compareSync(password, existEmail.password);
 
   if (!isMatch) {
-    if (existEmail.isActive) {
       const timeAccess = await Times.findOne({ userId: existEmail._id });
       if (!timeAccess) {
         await Times.create({
           userId: existEmail._id,
           times: 1,
         });
-        throw new ApiError(400, "You have 5 times more");
+        throw new ApiError(400, "Wrong password. You have 6 times more");
       } else {
         if (timeAccess.times === 6) {
           throw new ApiError(400, "Account is disabled for a while");
+
         } else {
           timeAccess.times += 1;
           await timeAccess.save();
           throw new ApiError(
             400,
-            `You have ${6 - timeAccess.times} times more`
+            `Wrong password. You have ${6 - timeAccess.times +1} times more`
           );
         }
       }
-    } else {
+    
+  }
+  if(isMatch){
+    const timeAccess = await Times.findOne({ userId: existEmail._id });
+    if (!timeAccess || timeAccess.times < 6){
+      const token = jwt.sign(
+        {
+          email: existEmail.email,
+          name: existEmail.name,
+          role: existEmail.role,
+          id: existEmail._id,
+        },
+        process.env.JWT_SECRET,
+        {
+          expiresIn: "1h",
+        }
+      );
+      res.json({
+        success: true,
+        token,
+      });
+    }else{
       throw new ApiError(400, "Account is disabled for a while");
     }
   }
 
-  const token = jwt.sign(
-    {
-      email: existEmail.email,
-      name: existEmail.name,
-      role: existEmail.role,
-      id: existEmail._id,
-    },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: "1h",
-    }
-  );
-  res.json({
-    success: true,
-    token,
-  });
+  
 });
 
 exports.updatePassword = catchAsync(async (req, res) => {

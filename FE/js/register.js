@@ -24,6 +24,17 @@ $("#btn-submit").click(function (e) {
         if(!result.success){
           alert(Object.values(result.message)[0]); 
         } else{
+          const result1 = {
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value,
+          };
+          const options1 = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(result1),
+          };
           fetch("http://localhost:3000/api/v1/auth/login", options1)
         .then((response) => response.json()) // chuyển kết quả trả về thành json object
         .then((result) => {
@@ -41,16 +52,6 @@ $("#btn-submit").click(function (e) {
       .catch((error) => {
         console.error("Error:", error); // ghi log nếu xảy ra lỗi
       });
-      const result1 = {
-        email: document.getElementById("email").value,
-        password: document.getElementById("password").value,
-      };
-      const options1 = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(result1),
-      };
+      
       console.log(options);
   });

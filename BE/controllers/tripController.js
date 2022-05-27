@@ -1,7 +1,7 @@
 const catchAsync = require("../middleware/async");
 const Trip = require("../models/trip");
 const Seat = require("../models/seat");
-
+const ApiError = require("../utils/ApiError");
 // _id.valueOf() --> lấy id từ object id
 exports.createTrip = catchAsync(async (req, res) => {
   const {
@@ -65,7 +65,7 @@ exports.getTrip = catchAsync(async (req, res) => {
   } else {
     data = await Trip.find({ source, destination });
   }
-  if (!data) {
+  if (data.length === 0) {
     throw new ApiError(400, "There is no available trip");
   }
   res.status(200).json({

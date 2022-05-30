@@ -45,7 +45,7 @@ header .hright a {
   font-weight: bolder;
 }
 
-header .hright .lg {
+header .hright .logout {
   background-color: #ba131a;
   padding: 5px 20px;
   margin-left: 15px;
@@ -199,5 +199,107 @@ header .hright .lg {
 .container .podes .list .pright .item .ct h3 {
   padding: 20px;
   font-size: 24px;
+}
+
+footer {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 20px;
+  padding: 20px 50px;
+}
+
+footer .logo {
+  width: 500px;
+  margin-left: 120px;
+}
+
+footer .logo img {
+  width: 80px;
+  height: 63px;
+  border-radius: 20px;
+  border: 1px solid #d8d8d8;
+  background-color: #d8d8d8;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+footer .logo p {
+  color: #012e6f;
+}
+
+footer .logo a {
+  color: #ba131a;
+}
+
+footer .contact {
+  margin-left: 130px;
+}
+
+footer .contact h2 {
+  color: #ba131a;
+}
+
+footer .contact div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .contact div span {
+  width: 50px;
+  height: 50px;
+  background-color: #ba131a;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 20px;
+}
+
+footer .contact div span i {
+  padding: 20px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+footer .contact div p {
+  font-weight: bold;
+  color: #012e6f;
+}
+
+footer .fright {
+  width: 500px;
+  margin-left: 150px;
+}
+
+footer .fright h2 {
+  color: #ba131a;
+}
+
+footer .fright div a {
+  font-size: 25px;
+  color: #012e6f;
+  text-decoration: none;
+  margin: 50px 0px;
+}
+
+footer .fright .info i {
+  color: #ffffff;
+  padding: 15px;
+  background-color: #012e6f;
+  margin: 20px 0px;
 }
 /*# sourceMappingURL=style.css.map */

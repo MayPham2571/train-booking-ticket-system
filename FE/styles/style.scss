@@ -5,7 +5,7 @@
 }
 body {
   margin: 0;
-  background-color: #f2f2f2f2;
+  background-color: #d8d8d8;
   font-family: sans-serif;
 }
 header {
@@ -77,82 +77,69 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $primary-color1;
+    background-color: #ffffff;
+    padding-right: 20px;
     .left {
     }
     .right {
-      width: 855px;
-      position: relative;
-      background-color: $primary-color1;
+      width: 500px;
+      text-align: center;
       h1 {
-        position: absolute;
-        top: -150px;
-        right: -100px;
         font-size: 2.5em;
-        color: #ffffff;
-        transition: all 0.3s;
-        opacity: 0;
-        margin: 10px;
+        color: $primary-color2;
       }
       h2 {
-        position: absolute;
-        top: -100px;
-        right: -90px;
-        color: #ffffff;
-        transition: all 0.3s;
-        opacity: 0;
-        margin: 10px;
+        color: $primary-color1;
       }
       h3 {
-        position: absolute;
-        top: -70px;
-        right: -80px;
-        padding-right: 10px;
-        color: #ffffff;
-        transition: all 0.3s;
-
-        opacity: 0;
-      }
-      p {
-        position: absolute;
-        top: 10px;
-        right: -70px;
-        width: 600px;
-        color: #ffffff;
-        transition: all 0.3s;
-
-        opacity: 0;
+        border-radius: 21px;
+        color: $primary-color2;
+        padding: 0px;
       }
     }
   }
-}
+  .podes {
+    background-color: #ffffff;
+    margin: 40px 0px;
+    border-radius: 21px;
+    h2 {
+      padding: 30px 45px 0px;
+      color: $primary-color2;
+    }
+    .list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 45px 20px;
 
-.container {
-  .content {
-    .right {
-      h1 {
-        animation: fadeIn 4s forwards;
-      }
-      h2 {
-        animation: fadeIn 4s forwards;
-      }
-      h3 {
-        animation: fadeIn 4s forwards;
-      }
-      p {
-        animation: fadeIn 4s forwards;
+      .pleft,
+      .pright {
+        .item {
+          width: 770px;
+          height: 126px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          overflow: hidden;
+          border: 1px solid #d8d8d8;
+          border-radius: 21px;
+          margin: 20px 0px;
+          img {
+            width: 335px;
+          }
+          .ct {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            color: $primary-color2;
+            margin-right: 30px;
+            h3 {
+              padding: 20px;
+              font-size: 24px;
+            }
+          }
+        }
       }
     }
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    right: -100px;
-  }
-  to {
-    opacity: 1;
-    right: 150px;
   }
 }

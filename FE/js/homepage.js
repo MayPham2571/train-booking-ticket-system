@@ -16,15 +16,7 @@ const loadHomepage = () => {
               `);
       } else {
         $(".container").append(`
-        <h1>Welcome</h1>
-        <a href="UserDetail.html">View Personal Information</a>
-        <a href="ChangePassword.html">Change Password</a>
-        <a href="BookTicket.html">Book Ticket</a>
-        <a href="ViewTicket.html">View Ticket</a>
-        <a href="ViewTrip.html">View Trip</a>
-        <a href="Payment.html">Payment</a>
-        <a href="RechargeBalance.html">Recharge Balance</a>
-        <button class="logout">Logout</button>
+        
               `);
       }
     })

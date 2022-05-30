@@ -23,6 +23,12 @@ router.post(
   authorize("admin"),
   userController.rechargeUserBalance
 );
+router.post(
+  "/create",
+  jwtAuth,
+  authorize("admin"),
+  userController.createUser
+);
 router.patch("/:id", jwtAuth, authorize("admin"), userController.updateUser);
 router.delete("/:id", jwtAuth, authorize("admin"), userController.deleteUser);
 module.exports = router;

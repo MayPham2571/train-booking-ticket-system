@@ -19,6 +19,10 @@ const catchError = (err, req, res, next) => {
   if (err.kind === "ObjectId") {
     err.statusCode = 400;
     err.message = "Invalid id";
+  }
+  if (err.code === 11000) {
+    err.statusCode = 400;
+    err.message = `The ${Object.keys(err.keyPattern)[0]} has been used`;
   } // format in ra lỗi : dạng object
   res.status(err.statusCode || 500).json({
     // 500 là lỗi liên quan đến server

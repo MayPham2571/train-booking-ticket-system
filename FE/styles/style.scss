@@ -146,30 +146,38 @@ header {
 footer {
   background-color: #ffffff;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
   font-size: 20px;
-  padding: 20px 50px;
+  padding: 30px 50px;
   .logo {
     width: 500px;
-    margin-left: 120px;
+    margin-left: 50px;
+    padding: 0px 50px;
+    background-color: $primary-color2;
+    border-radius: 21px;
     img {
-      width: 80px;
-      height: 63px;
+      width: 100px;
+      height: 83px;
       border-radius: 20px;
-      border: 1px solid #d8d8d8;
-      background-color: #d8d8d8;
       padding: 15px;
       margin-top: 40px;
     }
     p {
-      color: $primary-color1;
+      color: #ffffff;
+      font-weight: bold;
     }
     a {
-      color: $primary-color2;
+      color: #ffffff;
     }
   }
   .contact {
-    margin-left: 130px;
+    padding-left: 50px;
+    padding-right: 60px;
+    border-right: 1px solid $primary-color1;
     h2 {
       color: $primary-color2;
     }
@@ -193,19 +201,24 @@ footer {
           transform: translate(-50%, -50%);
         }
       }
+      a,
       p {
         font-weight: bold;
         color: $primary-color1;
+        text-decoration: none;
       }
     }
   }
   .fright {
     width: 500px;
-    margin-left: 150px;
+    padding-left: 50px;
     h2 {
       color: $primary-color2;
     }
     div {
+      width: 100px;
+      display: inline-block;
+      vertical-align: baseline;
       a {
         font-size: 25px;
         color: $primary-color1;
@@ -214,11 +227,13 @@ footer {
       }
     }
     .info {
+      width: 400px;
       i {
         color: #ffffff;
         padding: 15px;
         background-color: $primary-color1;
         margin: 20px 0px;
+        cursor: pointer;
       }
     }
   }

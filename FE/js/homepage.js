@@ -118,15 +118,15 @@ const loadHomepage = () => {
           </div>
           <div>
             <span><i class="fa-solid fa-comment"></i></span>
-            <p>Feedback</p>
+            <a href="">Feedback</a>
           </div>
         </div>
         <div class="fright">
           <h2>Link</h2>
           <div>
-            <a href="">Home</a><br />
-            <a href="">Features</a><br />
-            <a href="">How it works</a><br />
+            <a href="">Home</a>
+            <a href="">Features</a>
+            <a href="">How it works</a>
             <a href="">Our clients</a>
           </div>
           <div class="info">

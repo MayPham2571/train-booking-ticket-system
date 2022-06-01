@@ -13,7 +13,7 @@ $(".getOTP").click(function (e) {
   fetch(`http://localhost:3000/api/v1/ticket/checkBalance/${id}`, options)
     .then((response) => response.json()) // chuyển kết quả trả về thành json object
     .then((result) => {
-      $.notify(result.message, "success");
+      alert(result.message);
     })
     .catch((error) => {
       console.error("Error:", error); // ghi log nếu xảy ra lỗi
@@ -27,21 +27,30 @@ $(".Pay").click(function (e) {
   const result = {
     OTP: document.getElementById("OTP").value,
   };
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer " + localStorage.getItem("token"),
-    },
-    body: JSON.stringify(result),
-  };
-  console.log(options);
-  fetch(`http://localhost:3000/api/v1/ticket/payTicket/${id}`, options)
-    .then((response) => response.json()) // chuyển kết quả trả về thành json object
-    .then((result) => {
-      alert(result.message);
-    })
-    .catch((error) => {
-      console.error("Error:", error); // ghi log nếu xảy ra lỗi
-    });
+  if (!result.OTP) {
+    alert("Please enter OTP code");
+  } else {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+      body: JSON.stringify(result),
+    };
+    console.log(options);
+    fetch(`http://localhost:3000/api/v1/ticket/payTicket/${id}`, options)
+      .then((response) => response.json()) // chuyển kết quả trả về thành json object
+      .then((result) => {
+        console.log(result);
+        if (result.message === "Cannot read property 'otp' of null") {
+          alert("Have paid !");
+        } else {
+          alert(result.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error); // ghi log nếu xảy ra lỗi
+      });
+  }
 });

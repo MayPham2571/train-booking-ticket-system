@@ -39,7 +39,9 @@ const loadTicketpage = () => {
             <h4>SEAT NUMBER:</h4>
             <h2>${result.data[i].Seatnumber}</h2>
           </div>
-          <button>PAY</button>
+          <button class="${result.data[i]._id}" onclick="loadOTP(event, '${
+            result.data[i]._id
+          }')">PAY</button>
         </div>
             
                   `);
@@ -51,3 +53,8 @@ const loadTicketpage = () => {
     });
 };
 loadTicketpage();
+
+const loadOTP = (evt, id) => {
+  console.log(id);
+  location.assign(`http://127.0.0.1:5500/FE/OTP.html?id=${id}`);
+};

@@ -12,30 +12,35 @@ const loadTicketpage = () => {
     .then((result) => {
       console.log(result.data);
       if (!result.success) {
-        $(".container").append(`
+        $(".ticket").append(`
                       <h1>Errror</h1>
                   `);
       } else {
         for (i = 0; i < result.data.length; i++) {
-          $(".ticketTable").append(`
-            <tr>
-                <td>${i + 1}</td>
-                <td>
-                <ul>
-                    <li>Source: ${result.data[i].tripID.source}</li>
-                    <li>Destination: ${result.data[i].tripID.destination}</li>
-                    <li>Date: ${result.data[i].tripID.Date.slice(0, -14)}</li>
-                    <li>StartTime: ${result.data[i].tripID.StartTime}</li>
-                    <li>EndTime: ${result.data[i].tripID.EndTime}</li>
-                    <li>Seat Number: ${result.data[i].Seatnumber}</li>
-                </ul>
-                </td>
-                <td>
-                <a href="http://127.0.0.1:5500/OTP.html?id=${
-                  result.data[i]._id
-                }">Pay</a>
-                </td>
-            </tr>
+          $(".ticket").append(`
+          <div class="item">
+          <div>
+            <h4>FROM:</h4>
+            <h2>${result.data[i].tripID.source}</h2>
+            <h4>TO:</h4>
+            <h2>${result.data[i].tripID.destination}</h2>
+          </div>
+          <div>
+            <h4>DATE:</h4>
+            <h2>${result.data[i].tripID.Date.slice(0, -14)}</h2>
+            <h4>COST:</h4>
+            <h2>${result.data[i].price}</h2>
+          </div>
+          <div>
+            <h4>TIME:</h4>
+            <h2>${result.data[i].tripID.StartTime}-${
+            result.data[i].tripID.EndTime
+          }</h2>
+            <h4>SEAT NUMBER:</h4>
+            <h2>${result.data[i].Seatnumber}</h2>
+          </div>
+          <button>PAY</button>
+        </div>
             
                   `);
         }

@@ -73,3 +73,15 @@ exports.getTrip = catchAsync(async (req, res) => {
     data,
   });
 });
+
+exports.getSeat = catchAsync(async (req, res) => {
+  const { tripID } = req.body;
+  if (!tripID) {
+    throw new ApiError(400, "There is no available trip");
+  }
+  data = await Seat.find({ tripID: tripID });
+  res.status(200).json({
+    success: true,
+    data,
+  });
+});

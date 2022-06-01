@@ -62,7 +62,8 @@ exports.deleteTicket = catchAsync(async (req, res) => {
   });
 });
 exports.getUnpaidTicket = catchAsync(async (req, res) => {
-  const ticket = await Ticket.find({ isPaid: false }).populate(
+  const userId = req.user.id;
+  const ticket = await Ticket.find({ userID: userId, isPaid: false }).populate(
     "tripID",
     "source destination Date StartTime EndTime -_id"
   );
@@ -75,7 +76,11 @@ exports.getUnpaidTicket = catchAsync(async (req, res) => {
   });
 });
 exports.getPaidTicket = catchAsync(async (req, res) => {
-  const ticket = await Ticket.find({ isPaid: true });
+  const userId = req.user.id;
+  const ticket = await Ticket.find({ userID: userId, isPaid: true }).populate(
+    "tripID",
+    "source destination Date StartTime EndTime -_id"
+  );
   if (!ticket) {
     throw new ApiError(400, "This ticket is not available");
   }

@@ -1,4 +1,333 @@
-a {
-  display: block;
+.container {
+  margin: 0px auto;
+  max-width: 1710px;
+}
+
+body {
+  margin: 0;
+  background-color: #d8d8d8;
+  font-family: sans-serif;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url("../image/Scroll Group 1.png");
+  background-repeat: no-repeat;
+  background-position: 1% 1%;
+  background-size: cover;
+}
+
+header .hleft {
+  margin: 25px 50px;
+}
+
+header .hleft img {
+  width: 80px;
+  height: 63px;
+}
+
+header .hright {
+  margin: 25px 50px;
+}
+
+header .hright a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+header .hright .logout {
+  background-color: #ba131a;
+  padding: 5px 20px;
+  margin-left: 15px;
+  border-radius: 10px;
+}
+
+.container .head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: -23px;
+}
+
+.container .head span {
+  width: 285px;
+  height: 95px;
+  background-color: #012e6f;
+  position: relative;
+}
+
+.container .head span a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.container .head span:first-child {
+  border-top-left-radius: 8px;
+}
+
+.container .head span:last-child {
+  border-top-right-radius: 8px;
+}
+
+.container .head .red {
+  background-color: #ba131a;
+}
+
+.container .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  padding-right: 20px;
+}
+
+.container .content .right {
+  width: 500px;
+  text-align: center;
+}
+
+.container .content .right h1 {
+  font-size: 2.5em;
+  color: #ba131a;
+}
+
+.container .content .right h2 {
+  color: #012e6f;
+}
+
+.container .content .right h3 {
+  border-radius: 21px;
+  color: #ba131a;
+  padding: 0px;
+}
+
+.container .podes {
+  background-color: #ffffff;
+  margin: 40px 0px;
+  border-radius: 21px;
+}
+
+.container .podes h2 {
+  padding: 30px 45px 0px;
+  color: #ba131a;
+}
+
+.container .podes .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 45px 20px;
+}
+
+.container .podes .list .pleft .item,
+.container .podes .list .pright .item {
+  width: 770px;
+  height: 126px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  border: 1px solid #d8d8d8;
+  border-radius: 21px;
+  margin: 20px 0px;
+}
+
+.container .podes .list .pleft .item img,
+.container .podes .list .pright .item img {
+  width: 335px;
+}
+
+.container .podes .list .pleft .item .ct,
+.container .podes .list .pright .item .ct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  color: #ba131a;
+  margin-right: 30px;
+}
+
+.container .podes .list .pleft .item .ct h3,
+.container .podes .list .pright .item .ct h3 {
+  padding: 20px;
+  font-size: 24px;
+}
+
+footer {
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  font-size: 20px;
+  padding: 30px 50px;
+}
+
+footer .logo {
+  width: 500px;
+  margin-left: 50px;
+  padding: 0px 50px;
+  background-color: #ba131a;
+  border-radius: 21px;
+}
+
+footer .logo img {
+  width: 100px;
+  height: 83px;
+  border-radius: 20px;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+footer .logo p {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+footer .logo a {
+  color: #ffffff;
+}
+
+footer .contact {
+  padding-left: 50px;
+  padding-right: 60px;
+  border-right: 1px solid #012e6f;
+}
+
+footer .contact h2 {
+  color: #ba131a;
+}
+
+footer .contact div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .contact div span {
+  width: 50px;
+  height: 50px;
+  background-color: #ba131a;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 20px;
+}
+
+footer .contact div span i {
+  padding: 20px;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+footer .contact div a,
+footer .contact div p {
+  font-weight: bold;
+  color: #012e6f;
+  text-decoration: none;
+}
+
+footer .fright {
+  width: 500px;
+  padding-left: 50px;
+}
+
+footer .fright h2 {
+  color: #ba131a;
+}
+
+footer .fright div {
+  width: 100px;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+footer .fright div a {
+  font-size: 25px;
+  color: #012e6f;
+  text-decoration: none;
+  margin: 50px 0px;
+}
+
+footer .fright .info {
+  width: 400px;
+}
+
+footer .fright .info i {
+  color: #ffffff;
+  padding: 15px;
+  background-color: #012e6f;
+  margin: 20px 0px;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

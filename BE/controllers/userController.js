@@ -31,7 +31,7 @@ exports.createUser = catchAsync(async (req, res) => {
   res.status(200).json({
     success: true,
     data: user,
-    message: "Successfull create new user"
+    message: "Successfull create new user",
   });
 });
 exports.deleteUser = catchAsync(async (req, res) => {
@@ -49,7 +49,7 @@ exports.deleteUser = catchAsync(async (req, res) => {
 });
 exports.updateUser = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const { name, email, dob, address, phone, password, idCard } = req.body;
+  const { name, dob, address, phone, idCard } = req.body;
   const user = await User.findByIdAndUpdate(
     id,
     { name, email, dob, address, phone, password, idCard },

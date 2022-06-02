@@ -110,7 +110,10 @@ main .container form label {
   font-size: 30px;
 }
 
-main .container form input[type="text"], main .container form input[type="password"], main .container form input[type="email"], main .container form input[type="date"] {
+main .container form input[type="text"],
+main .container form input[type="password"],
+main .container form input[type="email"],
+main .container form input[type="date"] {
   border: 2px solid #012e6f;
   width: 614px;
   height: 86px;
@@ -121,6 +124,17 @@ main .container form input[type="text"], main .container form input[type="passwo
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin-bottom: 20px;
+}
+
+main .container form input[type="submit"] {
+  border: none;
+  background-color: #ba131a;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  border-radius: 14px;
+  margin: 0px 220px;
 }
 
 main .container form .center {
@@ -156,7 +170,8 @@ main .container form .center .register {
   padding-top: 50px;
 }
 
-main .container form .center span, main .container form .center a {
+main .container form .center span,
+main .container form .center a {
   font-size: 25px;
   padding-top: 0;
 }

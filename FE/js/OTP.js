@@ -47,6 +47,7 @@ $(".Pay").click(function (e) {
           alert("Have paid !");
         } else {
           alert(result.message);
+          location.replace("http://127.0.0.1:5500/FE/Payment.html");
         }
       })
       .catch((error) => {

@@ -425,3 +425,9 @@ $("select").each(function () {
     $optionlist.hide();
   });
 });
+
+$(document).on("click", ".logout", function (e) {
+  e.preventDefault();
+  window.localStorage.clear();
+  window.location.replace("Viewpage.html");
+});

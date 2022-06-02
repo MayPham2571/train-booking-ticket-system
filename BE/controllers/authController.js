@@ -123,7 +123,7 @@ exports.resetPassword = catchAsync(async (req, res) => {
   }
   // await Promise.all([user.save(), tokenUser.remove()]);//ko thực hiện cùng lúc đc
   await EmailService.sendMail(
-    "zumzum.no113@gmail.com",
+    user.email,
     "Success Reset password",
     "Your password is successfully reset"
   );
@@ -149,9 +149,9 @@ exports.forgetPassword = catchAsync(async (req, res) => {
     userId: existEmail._id,
     token: hashToken,
   });
-  const link = `${process.env.FRONT_END_URL}:5500/ResetPassword.html?token=${tokenReset}&userId=${existEmail._id}`;
+  const link = `${process.env.FRONT_END_URL}:5500/FE/ResetPassword.html?token=${tokenReset}&userId=${existEmail._id}`;
   await EmailService.sendMail(
-    "huynhgiaolethi0@gmail.com",
+    email,
     "Reset password",
     `Here is the link to reset your password: ${link}`
   );

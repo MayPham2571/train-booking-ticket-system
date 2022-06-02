@@ -35,8 +35,11 @@ $("#btn-submit").click(function (e) {
       }else{
         localStorage.setItem("token", result.token);
         if (localStorage.getItem("token")) {
-          console.log(parseJwt(localStorage.getItem("token")).id);
-          window.location.href = "homepage.html";
+          if(parseJwt(localStorage.getItem("token")).role === "user"){
+            window.location.href = "homepage.html";
+          }else{
+            window.location.href = "AdminHomepage.html";
+          }
         }
       }
     })

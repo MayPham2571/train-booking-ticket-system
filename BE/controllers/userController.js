@@ -3,16 +3,17 @@ const User = require("../models/account");
 const Ticket = require("../models/ticket");
 const Recharge = require("../models/recharge");
 var generator = require("generate-password");
+const EmailService = require("../utils/EmailService");
 exports.createUser = catchAsync(async (req, res) => {
   const { name, email, dob, address, phone, idCard } = req.body;
-  var password = generator.generateMultiple(3, {
+  var password = generator.generateMultiple(1, {
     length: 10,
     numbers: true,
     symbols: true,
     lowercase: true,
     uppercase: true,
     strict: true,
-  });
+  })[0];
   const user = await User.create({
     name,
     email,
@@ -22,9 +23,15 @@ exports.createUser = catchAsync(async (req, res) => {
     password,
     idCard,
   });
+  await EmailService.sendMail(
+    email,
+    "WELCOME NEW USER",
+    `Your password is: ${password}`
+  );
   res.status(200).json({
     success: true,
     data: user,
+    message: "Successfull create new user"
   });
 });
 exports.deleteUser = catchAsync(async (req, res) => {

@@ -1,4 +1,4 @@
-$(".resetPw").click(function (e) {
+$("#btn-submit").click(function (e) {
   e.preventDefault();
   const params = new URLSearchParams(window.location.search);
   const token = params.get("token");
@@ -21,7 +21,11 @@ $(".resetPw").click(function (e) {
   )
     .then((response) => response.json()) // chuyển kết quả trả về thành json object
     .then((result) => {
-      alert(result.message);
+      if(!result.success){
+        alert(Object.values(result.message)[0]); 
+      } else{
+        alert(result.message)
+      }
     })
     .catch((error) => {
       console.error("Error:", error); // ghi log nếu xảy ra lỗi

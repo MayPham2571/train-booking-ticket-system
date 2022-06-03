@@ -49,10 +49,10 @@ exports.deleteUser = catchAsync(async (req, res) => {
 });
 exports.updateUser = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const { name, email, dob, address, phone, password, idCard } = req.body;
+  const { name, dob, address, phone, idCard } = req.body;
   const user = await User.findByIdAndUpdate(
     id,
-    { name, email, dob, address, phone, password, idCard },
+    { name, dob, address, phone, idCard },
     { new: true }
   );
   res.status(200).json({ success: true, data: user });

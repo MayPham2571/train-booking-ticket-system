@@ -10,6 +10,17 @@ async function postData(url = "", data = {}) {
   });
   return response.json(); // parses JSON response into native JavaScript objects
 }
+async function getData(url = "") {
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
+  return response.json(); // parses JSON response into native JavaScript objects
+}
 $(".search").click(function (e) {
   e.preventDefault();
   const resultdata = {
@@ -94,6 +105,27 @@ $(".search").click(function (e) {
     );
   }
 });
+
+const loadSourceDes = () => {
+  getData("http://localhost:3000/api/v1/trip/getAllTrip").then((result) => {
+    var source = [];
+    var des = [];
+    for (i = 0; i < result.data.length; i++) {
+      if (!source.includes(result.data[i].source)) {
+        source.push(result.data[i].source);
+        $(".source").append(`
+        <option value="${result.data[i].source}">${result.data[i].source}</option>
+        `);
+      }
+      if (!des.includes(result.data[i].destination)) {
+        des.push(result.data[i].destination);
+        $(".destination").append(`
+        <option value="${result.data[i].destination}">${result.data[i].destination}</option>
+        `);
+      }
+    }
+  });
+};
 
 const openSeat = (evt, stepName, tripID) => {
   const a = stepName.slice(-1);
@@ -377,7 +409,7 @@ const eventButton = () => {
   });
 };
 eventButton();
-
+loadSourceDes();
 // ---------------------Select--------------------------------//
 $("select").each(function () {
   var $this = $(this),

@@ -25,7 +25,7 @@ const loadHomepage = () => {
         </div>
         <div class="hright">
           <a href="ChangePassword.html">Change Password</a>
-          <a class="logout" href="">Logout</a>
+          <a class="logout" href="FirstPage.html">Logout</a>
         </div>
       </header>
       <div class="container">

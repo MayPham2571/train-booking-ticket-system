@@ -31,7 +31,7 @@ exports.createUser = catchAsync(async (req, res) => {
   res.status(200).json({
     success: true,
     data: user,
-    message: "Successfull create new user"
+    message: "Successfull create new user",
   });
 });
 exports.deleteUser = catchAsync(async (req, res) => {

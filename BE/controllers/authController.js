@@ -35,31 +35,29 @@ exports.login = catchAsync(async (req, res) => {
   const isMatch = bcrypt.compareSync(password, existEmail.password);
 
   if (!isMatch) {
-      const timeAccess = await Times.findOne({ userId: existEmail._id });
-      if (!timeAccess) {
-        await Times.create({
-          userId: existEmail._id,
-          times: 1,
-        });
-        throw new ApiError(400, "Wrong password. You have 6 times more");
-      } else {
-        if (timeAccess.times === 6) {
-          throw new ApiError(400, "Account is disabled for a while");
-
-        } else {
-          timeAccess.times += 1;
-          await timeAccess.save();
-          throw new ApiError(
-            400,
-            `Wrong password. You have ${6 - timeAccess.times +1} times more`
-          );
-        }
-      }
-    
-  }
-  if(isMatch){
     const timeAccess = await Times.findOne({ userId: existEmail._id });
-    if (!timeAccess || timeAccess.times < 6){
+    if (!timeAccess) {
+      await Times.create({
+        userId: existEmail._id,
+        times: 1,
+      });
+      throw new ApiError(400, "Wrong password. You have 6 times more");
+    } else {
+      if (timeAccess.times === 6) {
+        throw new ApiError(400, "Account is disabled for a while");
+      } else {
+        timeAccess.times += 1;
+        await timeAccess.save();
+        throw new ApiError(
+          400,
+          `Wrong password. You have ${6 - timeAccess.times + 1} times more`
+        );
+      }
+    }
+  }
+  if (isMatch) {
+    const timeAccess = await Times.findOne({ userId: existEmail._id });
+    if (!timeAccess || timeAccess.times < 6) {
       const token = jwt.sign(
         {
           email: existEmail.email,
@@ -76,18 +74,16 @@ exports.login = catchAsync(async (req, res) => {
         success: true,
         token,
       });
-    }else{
+    } else {
       throw new ApiError(400, "Account is disabled for a while");
     }
   }
-
-  
 });
 
 exports.updatePassword = catchAsync(async (req, res) => {
   const { email } = req.user;
   const { oldPassword, newPassword } = req.body;
-  const existEmail = await Account.findOne({ email });
+  const existEmail = await Account.findOne({ email: email });
   if (!existEmail) {
     throw new ApiError(400, "Email have no longer exists");
   }
@@ -101,6 +97,7 @@ exports.updatePassword = catchAsync(async (req, res) => {
   console.log(existEmail);
   res.json({
     success: true,
+    message: "Change successfully !",
   });
 });
 

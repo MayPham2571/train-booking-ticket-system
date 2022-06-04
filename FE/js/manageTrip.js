@@ -83,22 +83,24 @@ $(".searchTrip").click(function (e) {
     });
   });
 });
-// const deleteTicket = (evt, id) => {
-//   const options = {
-//     method: "DELETE",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: "Bearer " + localStorage.getItem("token"),
-//     },
-//   };
-//   const url = `http://localhost:3000/api/v1/trip/${id}`;
-//   fetch(url, options)
-//     .then((response) => response.json())
-//     .then((result) => {
-//       alert(result.message);
-//       $(`.ticket${id}`).remove();
-//     });
-// };
+const deleteTicket = (evt, id) => {
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  };
+  const url = `http://localhost:3000/api/v1/trip/${id}`;
+  fetch(url, options)
+    .then((response) => response.json())
+    .then((result) => {
+      if (result.success) {
+        alert("Delete successfully");
+        $(`.ticket${id}`).remove();
+      }
+    });
+};
 const updateTrip = (evt, id) => {
   location.assign(`http://127.0.0.1:5500/FE/UpdateTrip.html?id=${id}`);
 };

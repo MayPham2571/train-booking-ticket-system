@@ -123,8 +123,7 @@ header .hright .lg {
   width: 400px;
   font-size: 28px;
   padding: 13px;
-  border: 4px solid #012e6f;
-  border-radius: 20px;
+  border: 1px solid #d8d8d8;
 }
 
 .container .content .form table tr td button {

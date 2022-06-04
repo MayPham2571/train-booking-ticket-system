@@ -62,7 +62,7 @@ header .hright .lg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: -35px;
+  margin-top: -38px;
   margin-bottom: -23px;
 }
 
@@ -85,60 +85,53 @@ header .hright .lg {
 
 .container .content {
   background-color: #ffffff;
-  margin-top: -46px;
+  margin-top: -51px;
+  padding-bottom: 10px;
 }
 
 .container .content h1 {
   color: #ba131a;
   text-align: center;
-  padding: 20px 0px;
+  padding-top: 30px;
+  font-size: 40px;
 }
 
-.container .content .unpaid .note {
-  color: #ba131a;
-  margin-left: 10%;
+.container .content .form {
+  width: 60%;
+  margin: 0 auto;
 }
 
-.container .content .unpaid .ticket {
-  margin-left: 10%;
-  margin-right: 10%;
-  padding-bottom: 20px;
+.container .content .form table {
+  margin: 10px auto;
 }
 
-.container .content .unpaid .ticket .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 2px solid #012e6f;
-  border-radius: 20px;
-  margin-bottom: 20px;
+.container .content .form table tr th {
+  padding: 20px;
+  text-align: start;
 }
 
-.container .content .unpaid .ticket .item div {
-  padding: 0px 10px;
-  margin: 0px 100px;
-}
-
-.container .content .unpaid .ticket .item div h4 {
+.container .content .form table tr th label {
   color: #012e6f;
+  font-size: 27px;
 }
 
-.container .content .unpaid .ticket .item div h2 {
-  color: #ba131a;
+.container .content .form table tr td {
+  padding: 5px 0px;
 }
 
-.container .content .unpaid .ticket .item button {
-  color: #ffffff;
+.container .content .form table tr td input {
+  width: 400px;
+  font-size: 28px;
+  padding: 13px;
+  border: 1px solid #d8d8d8;
+}
+
+.container .content .form table tr td button {
   background-color: #ba131a;
-  border-radius: 15px;
-  padding: 15px 20px;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 20px;
+  font-size: 28px;
   border: none;
-  font-size: 20px;
 }
-/*# sourceMappingURL=payment.css.map */
+/*# sourceMappingURL=updateTrip.css.map */

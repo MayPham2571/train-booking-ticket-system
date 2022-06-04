@@ -1,6 +1,8 @@
 const catchAsync = require("../middleware/async");
 const Trip = require("../models/trip");
 const Seat = require("../models/seat");
+const Ticket = require("../models/ticket");
+const Payment = require("../models/payment");
 const ApiError = require("../utils/ApiError");
 // _id.valueOf() --> lấy id từ object id
 exports.createTrip = catchAsync(async (req, res) => {
@@ -35,11 +37,16 @@ exports.createTrip = catchAsync(async (req, res) => {
 exports.deleteTrip = catchAsync(async (req, res) => {
   const { id } = req.params;
   const trip = await Trip.findById(id);
+  const ticket = await Ticket.find({ tripID: id });
   if (!trip) {
     throw new ApiError(400, "This trip is not available");
   }
   await trip.remove();
+  await Ticket.deleteMany({ tripID: id });
   await Seat.deleteMany({ tripID: id });
+  for (i = 0; i < ticket.length; i++) {
+    await Payment.deleteOne({ ticketID: ticket[i]._id });
+  }
   res.status(200).json({
     success: true,
     data: trip,

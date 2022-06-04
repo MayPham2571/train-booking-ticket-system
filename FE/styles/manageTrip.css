@@ -192,6 +192,7 @@ main .container .content .top form button {
   font-size: 30px;
   font-weight: bold;
   border-radius: 34px;
+  border: none;
 }
 
 main .container .content .body {
@@ -211,9 +212,9 @@ main .container .content .body .list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -235,7 +236,7 @@ main .container .content .body .list li .line {
 }
 
 main .container .content .body .list li .line div {
-  margin: 0px 50px;
+  margin: 0px 40px;
 }
 
 main .container .content .body .list li .line div h4 {
@@ -254,6 +255,6 @@ main .container .content .body .list li button {
   font-size: 25px;
   border-radius: 14px;
   border: none;
-  margin-right: 30px;
+  margin: 0px 20px;
 }
 /*# sourceMappingURL=manageTrip.css.map */

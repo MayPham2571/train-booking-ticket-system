@@ -131,6 +131,7 @@ main {
             font-size: 30px;
             font-weight: bold;
             border-radius: 34px;
+            border: none;
           }
         }
       }
@@ -143,7 +144,7 @@ main {
           padding-right: 30px;
           li {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             border-bottom: 1px solid #707070;
             .line {
@@ -153,7 +154,7 @@ main {
               text-align: center;
               font-size: 25px;
               div {
-                margin: 0px 50px;
+                margin: 0px 40px;
                 h4 {
                   color: $primary-color2;
                 }
@@ -170,7 +171,7 @@ main {
               font-size: 25px;
               border-radius: 14px;
               border: none;
-              margin-right: 30px;
+              margin: 0px 20px;
             }
           }
         }

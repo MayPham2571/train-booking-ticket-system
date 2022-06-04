@@ -296,7 +296,7 @@ header {
               input[type="radio"]:checked + label {
                 span,
                 i {
-                  color: $primary-color2;
+                  color: #707070;
                 }
               }
               .left {
@@ -354,7 +354,7 @@ header {
                   color: $primary-color1;
                   transition: all 0.3s ease;
                   &:hover {
-                    color: $primary-color2;
+                    color: #707070;
                   }
                 }
               }
@@ -393,7 +393,8 @@ header {
       }
     }
     #Step2,
-    #Step3 {
+    #Step3,
+    .step4 {
       h1 {
         color: $primary-color2;
       }

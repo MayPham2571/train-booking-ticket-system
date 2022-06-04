@@ -25,7 +25,7 @@ const loadHomepage = () => {
         </div>
         <div class="hright">
           <a href="ChangePassword.html">Change Password</a>
-          <a class="logout" href="">Logout</a>
+          <a class="logout" href="FirstPage.html">Logout</a>
         </div>
       </header>
       <div class="container">
@@ -34,7 +34,7 @@ const loadHomepage = () => {
           <span class="red"><a href="ViewTicket.html">View Ticket</a></span>
           <span><a href="BookTicket.html">Book Ticket</a></span>
           <span class="red"><a href="Payment.html">Pay Ticket</a></span>
-          <span><a href="ResetPassword.html">Recharge Balance</a></span>
+          <span><a href="RechargeBalance.html">Recharge Balance</a></span>
           <span class="red"
             ><a href="UserDetail.html">View Personal Infomation</a></span
           >

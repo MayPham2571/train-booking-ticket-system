@@ -101,3 +101,11 @@ exports.getSeat = catchAsync(async (req, res) => {
     data,
   });
 });
+exports.getTripById = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const data = await Trip.findById(id);
+  res.status(200).json({
+    success: true,
+    data,
+  });
+});

@@ -111,7 +111,6 @@ header {
       justify-content: space-between;
       align-items: center;
       padding: 0px 45px 20px;
-
       .pleft,
       .pright {
         .item {
@@ -126,6 +125,12 @@ header {
           margin: 20px 0px;
           img {
             width: 335px;
+          }
+          transition: all 0.3s;
+          &:hover {
+            transform: translateY(-10px);
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+              rgba(0, 0, 0, 0.23) 0px 6px 6px;
           }
           .ct {
             display: flex;
@@ -148,23 +153,19 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: stretch;
+  justify-content: space-around;
   font-size: 20px;
-  padding: 30px 50px;
+  padding: 50px 70px;
   .logo {
-    width: 500px;
-    margin-left: 50px;
-    padding: 0px 50px;
+    width: 430px;
     background-color: $primary-color2;
     border-radius: 21px;
+    padding: 20px;
     img {
       width: 100px;
       height: 83px;
       border-radius: 20px;
       padding: 15px;
-      margin-top: 40px;
     }
     p {
       color: #ffffff;
@@ -175,9 +176,8 @@ footer {
     }
   }
   .contact {
-    padding-left: 50px;
-    padding-right: 60px;
-    border-right: 1px solid $primary-color1;
+    border-right: 2px solid $primary-color1;
+    padding-right: 90px;
     h2 {
       color: $primary-color2;
     }
@@ -186,54 +186,64 @@ footer {
       justify-content: flex-start;
       align-items: center;
       span {
+        margin-top: 10px;
+        margin-right: 10px;
         width: 50px;
         height: 50px;
-        background-color: $primary-color2;
-        border-radius: 50%;
+        background-color: $primary-color1;
+        color: #ffffff;
+        border-radius: 50px;
         position: relative;
-        margin-right: 20px;
         i {
-          padding: 20px;
-          color: #ffffff;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
         }
       }
-      a,
-      p {
-        font-weight: bold;
+      p,
+      a {
         color: $primary-color1;
+        font-size: 25px;
+        padding-left: 10px;
         text-decoration: none;
       }
     }
   }
   .fright {
-    width: 500px;
-    padding-left: 50px;
     h2 {
       color: $primary-color2;
+      margin-bottom: 50px;
     }
     div {
-      width: 100px;
-      display: inline-block;
-      vertical-align: baseline;
       a {
-        font-size: 25px;
-        color: $primary-color1;
+        margin-top: 30px;
+        border-right: 1px solid $primary-color1;
+        padding-right: 10px;
         text-decoration: none;
-        margin: 50px 0px;
+        color: $primary-color1;
+        font-size: 25px;
+        margin: 30px 0px;
+        &:hover {
+          color: $primary-color2;
+        }
+      }
+      :last-child {
+        border-right: none;
       }
     }
     .info {
-      width: 400px;
+      margin-top: 30px;
       i {
-        color: #ffffff;
-        padding: 15px;
         background-color: $primary-color1;
-        margin: 20px 0px;
-        cursor: pointer;
+        padding: 18px;
+        color: #ffffff;
+        border-radius: 14px;
+        margin-right: 10px;
+        transition: all 0.3s;
+        &:hover {
+          background-color: $primary-color2;
+        }
       }
     }
   }

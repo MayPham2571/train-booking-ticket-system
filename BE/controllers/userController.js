@@ -52,13 +52,22 @@ exports.updateUser = catchAsync(async (req, res) => {
   const { name, dob, address, phone, idCard } = req.body;
   const user = await User.findByIdAndUpdate(
     id,
-    { name, email, dob, address, phone, password, idCard },
+    { name, dob, address, phone, idCard },
     { new: true }
   );
-  res.status(200).json({ success: true, data: user });
+  res.status(200).json({ success: true,
+    message: "Update successfully", data: user });
 });
 exports.getAllUser = catchAsync(async (req, res) => {
   const data = await User.find({});
+  res.status(200).json({
+    success: true,
+    data,
+  });
+});
+exports.getUser = catchAsync(async (req, res) => {
+  const {id} = req.params;
+  const data = await User.findById(id);
   res.status(200).json({
     success: true,
     data,
@@ -82,6 +91,7 @@ exports.rechargeUserBalance = catchAsync(async (req, res) => {
   res.status(200).json({
     success: true,
     newUser,
+    message: `Successful. The new balance is ${newUser.balance}`
   });
 });
 exports.rechargeBalance = catchAsync(async (req, res) => {

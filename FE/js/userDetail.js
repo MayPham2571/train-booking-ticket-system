@@ -10,10 +10,8 @@ const loadUserDetailpage = () => {
   fetch(url, options)
     .then((response) => response.json())
     .then((result) => {
-      console.log("Hi");
-      console.log(result);
       if (!result.success) {
-        $(".container").append(`
+        $("body").append(`
                     <h1>Errror</h1>
                 `);
       } else {

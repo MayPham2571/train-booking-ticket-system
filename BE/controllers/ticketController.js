@@ -43,13 +43,26 @@ exports.getTicket = catchAsync(async (req, res) => {
     data,
   });
 });
+exports.searchTicketByMail = catchAsync(async (req, res) => {
+  const { email } = req.body;
+  const inputUser = await account.findOne({ email: email });
+  const data = await Ticket.find({ userID: inputUser._id })
+    .populate("userID", "name email address phone -_id")
+    .populate("tripID", "source destination Date StartTime EndTime -_id");
+  res.status(200).json({
+    success: true,
+    data,
+  });
+});
 exports.deleteTicket = catchAsync(async (req, res) => {
   const { id } = req.params;
   const ticket = await Ticket.findById(id);
+  const pm = await payment.findOne({ ticketID: id });
   if (!ticket) {
     throw new ApiError(400, "This ticket is not available");
   }
   await ticket.remove();
+  await pm.remove();
   const currentSeat = await seat.find({
     tripID: ticket.tripID,
     Seatnumber: ticket.Seatnumber,
@@ -125,7 +138,7 @@ exports.checkBalance = catchAsync(async (req, res) => {
       }
     }
     await EmailService.sendMail(
-      "huynhgiaolethi0@gmail.com",
+      user.email,
       "OTP verification",
       `Your OTP code: ${otpcode}`
     );

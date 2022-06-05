@@ -121,7 +121,8 @@ header .hright .lg {
 }
 
 .container .content .unpaid .ticket .item div {
-  padding: 0px 120px;
+  padding: 0px 10px;
+  margin: 0px 100px;
 }
 
 .container .content .unpaid .ticket .item div h4 {

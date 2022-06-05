@@ -5,6 +5,7 @@ const { authorize } = require("../middleware/authorize");
 const router = express.Router();
 
 router.post("/", jwtAuth, tripController.getTrip);
+router.get("/getAllTrip", jwtAuth, tripController.getAllTrip);
 router.post("/getSeat", jwtAuth, tripController.getSeat);
 router.post(
   "/createTrip",

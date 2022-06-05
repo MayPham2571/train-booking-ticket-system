@@ -4,6 +4,11 @@ const ticketController = require("../controllers/ticketController");
 const { jwtAuth } = require("../middleware/jwtAuth");
 const { basicAuth } = require("../middleware/basicAuth");
 router.post("/bookTicket", jwtAuth, ticketController.bookTicket);
+router.post(
+  "/searchTicketByMail",
+  jwtAuth,
+  ticketController.searchTicketByMail
+);
 router.get("/getTicket", jwtAuth, ticketController.getTicket);
 router.get("/getUnpaidTicket", jwtAuth, ticketController.getUnpaidTicket);
 router.get("/getPaidTicket", jwtAuth, ticketController.getPaidTicket);

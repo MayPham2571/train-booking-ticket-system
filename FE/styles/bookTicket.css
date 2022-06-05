@@ -384,7 +384,7 @@ header .hright .lg {
 
 .container .content .tabcontent .getTrip .trip .below .seatNum input[type="radio"]:checked + label span,
 .container .content .tabcontent .getTrip .trip .below .seatNum input[type="radio"]:checked + label i {
-  color: #ba131a;
+  color: #707070;
 }
 
 .container .content .tabcontent .getTrip .trip .below .seatNum .left {
@@ -482,7 +482,7 @@ header .hright .lg {
 }
 
 .container .content .tabcontent .getTrip .trip .below .seatNum label i:hover {
-  color: #ba131a;
+  color: #707070;
 }
 
 .container .content .tabcontent .getTrip .trip .title {
@@ -533,25 +533,29 @@ header .hright .lg {
 }
 
 .container .content #Step2 h1,
-.container .content #Step3 h1 {
+.container .content #Step3 h1,
+.container .content .step4 h1 {
   color: #ba131a;
 }
 
 .container .content #Step2 table,
-.container .content #Step3 table {
+.container .content #Step3 table,
+.container .content .step4 table {
   margin: 20px auto;
   font-size: 20px;
   text-align: left;
 }
 
 .container .content #Step2 table tr th,
-.container .content #Step3 table tr th {
+.container .content #Step3 table tr th,
+.container .content .step4 table tr th {
   color: #ba131a;
   padding-right: 10px;
 }
 
 .container .content #Step2 table tr td,
-.container .content #Step3 table tr td {
+.container .content #Step3 table tr td,
+.container .content .step4 table tr td {
   color: #ba131a;
   border: 3px solid #012e6f;
   border-radius: 10px;

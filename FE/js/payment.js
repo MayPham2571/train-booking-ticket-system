@@ -16,8 +16,14 @@ const loadTicketpage = () => {
                       <h1>Errror</h1>
                   `);
       } else {
-        for (i = 0; i < result.data.length; i++) {
-          $(".ticket").append(`
+        if (result.data.length === 0) {
+          $(".unpaid").empty();
+          $(".unpaid").append(`
+            <h1>Don't have ticket that need to be paid</h1>
+          `);
+        } else {
+          for (i = 0; i < result.data.length; i++) {
+            $(".ticket").append(`
           <div class="item">
           <div>
             <h4>FROM:</h4>
@@ -34,17 +40,18 @@ const loadTicketpage = () => {
           <div>
             <h4>TIME:</h4>
             <h2>${result.data[i].tripID.StartTime}-${
-            result.data[i].tripID.EndTime
-          }</h2>
+              result.data[i].tripID.EndTime
+            }</h2>
             <h4>SEAT NUMBER:</h4>
             <h2>${result.data[i].Seatnumber}</h2>
           </div>
           <button class="${result.data[i]._id}" onclick="loadOTP(event, '${
-            result.data[i]._id
-          }')">PAY</button>
+              result.data[i]._id
+            }')">PAY</button>
         </div>
             
                   `);
+          }
         }
       }
     })

@@ -173,11 +173,21 @@ header .hright .logout {
   border: 1px solid #d8d8d8;
   border-radius: 21px;
   margin: 20px 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .container .podes .list .pleft .item img,
 .container .podes .list .pright .item img {
   width: 335px;
+}
+
+.container .podes .list .pleft .item:hover,
+.container .podes .list .pright .item:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .container .podes .list .pleft .item .ct,
@@ -212,24 +222,17 @@ footer {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   font-size: 20px;
-  padding: 30px 50px;
+  padding: 50px 70px;
 }
 
 footer .logo {
-  width: 500px;
-  margin-left: 50px;
-  padding: 0px 50px;
+  width: 430px;
   background-color: #ba131a;
   border-radius: 21px;
+  padding: 20px;
 }
 
 footer .logo img {
@@ -237,7 +240,6 @@ footer .logo img {
   height: 83px;
   border-radius: 20px;
   padding: 15px;
-  margin-top: 40px;
 }
 
 footer .logo p {
@@ -250,9 +252,8 @@ footer .logo a {
 }
 
 footer .contact {
-  padding-left: 50px;
-  padding-right: 60px;
-  border-right: 1px solid #012e6f;
+  border-right: 2px solid #012e6f;
+  padding-right: 90px;
 }
 
 footer .contact h2 {
@@ -272,17 +273,17 @@ footer .contact div {
 }
 
 footer .contact div span {
+  margin-top: 10px;
+  margin-right: 10px;
   width: 50px;
   height: 50px;
-  background-color: #ba131a;
-  border-radius: 50%;
+  background-color: #012e6f;
+  color: #ffffff;
+  border-radius: 50px;
   position: relative;
-  margin-right: 20px;
 }
 
 footer .contact div span i {
-  padding: 20px;
-  color: #ffffff;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -290,44 +291,52 @@ footer .contact div span i {
           transform: translate(-50%, -50%);
 }
 
-footer .contact div a,
-footer .contact div p {
-  font-weight: bold;
+footer .contact div p,
+footer .contact div a {
   color: #012e6f;
+  font-size: 25px;
+  padding-left: 10px;
   text-decoration: none;
-}
-
-footer .fright {
-  width: 500px;
-  padding-left: 50px;
 }
 
 footer .fright h2 {
   color: #ba131a;
-}
-
-footer .fright div {
-  width: 100px;
-  display: inline-block;
-  vertical-align: baseline;
+  margin-bottom: 50px;
 }
 
 footer .fright div a {
-  font-size: 25px;
-  color: #012e6f;
+  margin-top: 30px;
+  border-right: 1px solid #012e6f;
+  padding-right: 10px;
   text-decoration: none;
-  margin: 50px 0px;
+  color: #012e6f;
+  font-size: 25px;
+  margin: 30px 0px;
+}
+
+footer .fright div a:hover {
+  color: #ba131a;
+}
+
+footer .fright div :last-child {
+  border-right: none;
 }
 
 footer .fright .info {
-  width: 400px;
+  margin-top: 30px;
 }
 
 footer .fright .info i {
-  color: #ffffff;
-  padding: 15px;
   background-color: #012e6f;
-  margin: 20px 0px;
-  cursor: pointer;
+  padding: 18px;
+  color: #ffffff;
+  border-radius: 14px;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+footer .fright .info i:hover {
+  background-color: #ba131a;
 }
 /*# sourceMappingURL=style.css.map */

@@ -5,6 +5,7 @@ const { authorize } = require("../middleware/authorize");
 const router = express.Router();
 
 router.get("/", jwtAuth, authorize("admin"), userController.getAllUser);
+router.get("/:id", jwtAuth, authorize("admin"), userController.getUser);
 router.get(
   "/detail",
   jwtAuth,

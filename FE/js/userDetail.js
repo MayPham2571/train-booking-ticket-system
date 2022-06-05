@@ -11,7 +11,7 @@ const loadUserDetailpage = () => {
     .then((response) => response.json())
     .then((result) => {
       if (!result.success) {
-        $(".container").append(`
+        $("body").append(`
                     <h1>Errror</h1>
                 `);
       } else {

@@ -23,7 +23,7 @@ async function updateData(url = "", data = {}) {
   }
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
-getData(`http://localhost:3000/api/v1/user/${id}`).then((result) => {
+getData(`http://localhost:3000/api/v1/user//detail/${id}`).then((result) => {
     if (!result.success) {
         $("body").append(`
                     <h1>Errror</h1>

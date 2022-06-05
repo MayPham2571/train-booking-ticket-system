@@ -138,7 +138,7 @@ exports.checkBalance = catchAsync(async (req, res) => {
       }
     }
     await EmailService.sendMail(
-      "huynhgiaolethi0@gmail.com",
+      user.email,
       "OTP verification",
       `Your OTP code: ${otpcode}`
     );

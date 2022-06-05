@@ -105,3 +105,8 @@ getData(`http://localhost:3000/api/v1/user/${id}`).then((result) => {
         
       );
     });
+    $(document).on("click", ".lg", function (e) {
+      e.preventDefault();
+      window.localStorage.clear();
+      window.location.replace("FirstPage.html");
+    });

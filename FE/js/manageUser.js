@@ -83,3 +83,8 @@ const deleteUser = (evt, id) => {
       $(`.user${id}`).remove();
     });
   }
+  $(document).on("click", ".lg", function (e) {
+    e.preventDefault();
+    window.localStorage.clear();
+    window.location.replace("FirstPage.html");
+  });

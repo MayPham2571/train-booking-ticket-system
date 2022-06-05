@@ -67,6 +67,10 @@ header .hright .lg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -157,29 +161,95 @@ header .hright .lg {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 70px;
+}
+
+.container .content .box .flex .custom-select {
+  position: relative;
+  color: #ba131a;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container .content .box .flex .custom-select select {
+  display: none;
+}
+
+.container .content .box .flex .select-selected {
+  background-color: #ffffff;
+}
+
+.container .content .box .flex .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #ba131a transparent transparent transparent;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+.container .content .box .flex .select-selected.select-arrow-active:after {
+  border-color: transparent transparent #ba131a transparent;
+  top: 7px;
+}
+
+.container .content .box .flex .select-items div, .container .content .box .flex .select-selected {
+  color: #ba131a;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.container .content .box .flex .select-items {
+  position: absolute;
+  background-color: #ffffff;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.container .content .box .flex .select-hide {
+  display: none;
+}
+
+.container .content .box .flex .select-items div:hover, .container .content .box .flex .same-as-selected {
+  background-color: #ba131a;
+  color: #fff;
 }
 
 .container .content .box .flex .rbox {
-  padding-right: 115px;
+  padding-right: 35px;
+  padding-left: 35px;
+  margin-right: 60px;
+  width: 730px;
+  height: 117px;
+  border-radius: 16px;
+  border: solid 1px #d8d8d8;
 }
 
 .container .content .box .flex .rbox h4 {
-  font-size: 30px;
+  font-size: 13px;
   color: #012e6f;
-  margin-bottom: 55px;
 }
 
 .container .content .box .flex .lbox {
-  padding-top: 15px;
+  padding-right: 35px;
+  padding-left: 35px;
+  width: 730px;
+  height: 117px;
+  border-radius: 16px;
+  border: solid 1px #d8d8d8;
 }
 
-.container .content .box .flex .lbox input {
-  width: 536px;
-  height: 57px;
-  border-radius: 7px;
-  border: 1px solid #d8d8d8;
-  font-size: 30px;
-  margin-bottom: 30px;
+.container .content .box .flex .lbox h4 {
+  font-size: 13px;
+  color: #012e6f;
 }
 
 .container .content button {
@@ -190,5 +260,72 @@ header .hright .lg {
   border: none;
   font-size: 30px;
   font-weight: bold;
+}
+
+.search {
+  width: 308px;
+  height: 76px;
+  border-radius: 13px;
+  background-color: #ba131a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -38px;
+  margin-left: 1300px;
+}
+
+.search a {
+  font-size: 21px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25px;
+}
+
+.search .icon {
+  width: 29px;
+  height: 17px;
+  margin-left: 20px;
+  margin-top: 29px;
+}
+
+.other {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 25px;
+}
+
+.other .lother a {
+  font-size: 23px;
+  color: #012e6f;
+  margin-left: 20px;
+}
+
+.other .lother .sort {
+  width: 16px;
+  height: 16px;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+.other .rother a {
+  font-size: 23px;
+  color: #012e6f;
+  margin-right: 20px;
+  margin-left: 1250px;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=firstpage.css.map */

@@ -135,6 +135,10 @@ header {
         border-radius: 10px;
         border: 2px solid $primary-color2;
       }
+      a {
+        color: $primary-color2;
+        font-size: 25px;
+      }
       .Step1content {
         display: flex;
         justify-content: center;

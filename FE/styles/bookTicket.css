@@ -175,6 +175,11 @@ header .hright .lg {
   border: 2px solid #ba131a;
 }
 
+.container .content .tabcontent a {
+  color: #ba131a;
+  font-size: 25px;
+}
+
 .container .content .tabcontent .Step1content {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -153,96 +153,50 @@ header {
           border-radius: 10px;
           border: 2px solid $primary-color2;
         }
-        .select {
-          cursor: pointer;
-          display: inline-block;
+        input {
+          padding: 20px;
+          width: 200px;
+          border: 2px solid $primary-color2;
+          border-radius: 14px;
+          margin: 0px 30px;
+          &:focus {
+            outline: 2px solid $primary-color2;
+          }
+        }
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
           position: relative;
-          font-size: 16px;
-          color: #fff;
-          width: 300px;
-          height: 50px;
-          margin: 0px 20px;
+          display: inline-block;
         }
-        select {
-          display: none;
-        }
-        .custom-select {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          background-color: #ffffff;
-          border: 2px solid $primary-color1;
-          border-radius: 8px;
-          color: $primary-color2;
-          font-size: 20px;
-          padding: 8px 15px;
-          transition: all 0.2s ease-in;
-        }
-        .custom-select:after {
-          content: "";
-          width: 0;
-          height: 0;
-          border: 7px solid transparent;
-          border-color: $primary-color2 transparent transparent transparent;
-          position: absolute;
-          top: 16px;
-          right: 30px;
-          transform: rotateZ(0deg);
-          transition: all 0.5s;
-          transform-origin: 50% 25%;
-        }
-        .custom-select:active,
-        .custom-select.active {
-          background-color: #fff;
-          color: $primary-color2;
-        }
-        .custom-select:active:after,
-        .custom-select.active:after {
-          transform: rotateZ(180deg);
-          transition: all 0.5s;
-          transform-origin: 50% 25%;
-        }
-        .custom-select:focus {
-          outline: 2px;
-        }
-        .select-options {
-          max-height: 200px;
-          width: 300px;
-          overflow-y: auto;
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
           display: none;
           position: absolute;
-          top: 100%;
-          right: 0;
-          left: 0;
-          z-index: 999;
-          margin: 0;
-          padding: 0;
-          list-style: none;
-          background-color: #ffffff;
+          top: 60px;
+          left: 35px;
+          background-color: #f6f6f6;
+          min-width: 230px;
+          border: 1px solid #ddd;
+          z-index: 1;
         }
-        .select-options li {
-          color: $primary-color2;
-          font-size: 20px;
-          margin: 0;
-          padding: 12px 0;
-          transition: all 0.15s ease-in;
-          padding-left: 15px;
+
+        /* Links inside the dropdown */
+        .dropdown-content p {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          cursor: pointer;
         }
-        .select-options li:hover {
-          color: #ffffff;
-          background: $primary-color2;
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content p:hover {
+          background-color: #f1f1f1;
         }
-        .select-options li[rel="hide"] {
-          display: none;
-        }
-        ::-webkit-scrollbar {
-          width: 8px;
-          background-color: #ffffff;
-        }
-        ::-webkit-scrollbar-thumb {
-          background-color: $primary-color2;
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {
+          display: block;
         }
       }
 

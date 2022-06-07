@@ -190,6 +190,11 @@ header .hright .lg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* The container <div> - needed to position the dropdown content */
+  /* Dropdown Content (Hidden by Default) */
+  /* Links inside the dropdown */
+  /* Change color of dropdown links on hover */
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 }
 
 .container .content .tabcontent .Step1content h3 {
@@ -204,116 +209,48 @@ header .hright .lg {
   border: 2px solid #ba131a;
 }
 
-.container .content .tabcontent .Step1content .select {
-  cursor: pointer;
-  display: inline-block;
+.container .content .tabcontent .Step1content input {
+  padding: 20px;
+  width: 200px;
+  border: 2px solid #ba131a;
+  border-radius: 14px;
+  margin: 0px 30px;
+}
+
+.container .content .tabcontent .Step1content input:focus {
+  outline: 2px solid #ba131a;
+}
+
+.container .content .tabcontent .Step1content .dropdown {
   position: relative;
-  font-size: 16px;
-  color: #fff;
-  width: 300px;
-  height: 50px;
-  margin: 0px 20px;
+  display: inline-block;
 }
 
-.container .content .tabcontent .Step1content select {
-  display: none;
-}
-
-.container .content .tabcontent .Step1content .custom-select {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #ffffff;
-  border: 2px solid #012e6f;
-  border-radius: 8px;
-  color: #ba131a;
-  font-size: 20px;
-  padding: 8px 15px;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-}
-
-.container .content .tabcontent .Step1content .custom-select:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border: 7px solid transparent;
-  border-color: #ba131a transparent transparent transparent;
-  position: absolute;
-  top: 16px;
-  right: 30px;
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 50% 25%;
-          transform-origin: 50% 25%;
-}
-
-.container .content .tabcontent .Step1content .custom-select:active,
-.container .content .tabcontent .Step1content .custom-select.active {
-  background-color: #fff;
-  color: #ba131a;
-}
-
-.container .content .tabcontent .Step1content .custom-select:active:after,
-.container .content .tabcontent .Step1content .custom-select.active:after {
-  -webkit-transform: rotateZ(180deg);
-          transform: rotateZ(180deg);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-transform-origin: 50% 25%;
-          transform-origin: 50% 25%;
-}
-
-.container .content .tabcontent .Step1content .custom-select:focus {
-  outline: 2px;
-}
-
-.container .content .tabcontent .Step1content .select-options {
-  max-height: 200px;
-  width: 300px;
-  overflow-y: auto;
+.container .content .tabcontent .Step1content .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  right: 0;
-  left: 0;
-  z-index: 999;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: #ffffff;
+  top: 60px;
+  left: 35px;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
 }
 
-.container .content .tabcontent .Step1content .select-options li {
-  color: #ba131a;
-  font-size: 20px;
-  margin: 0;
-  padding: 12px 0;
-  -webkit-transition: all 0.15s ease-in;
-  transition: all 0.15s ease-in;
-  padding-left: 15px;
+.container .content .tabcontent .Step1content .dropdown-content p {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
 
-.container .content .tabcontent .Step1content .select-options li:hover {
-  color: #ffffff;
-  background: #ba131a;
+.container .content .tabcontent .Step1content .dropdown-content p:hover {
+  background-color: #f1f1f1;
 }
 
-.container .content .tabcontent .Step1content .select-options li[rel="hide"] {
-  display: none;
-}
-
-.container .content .tabcontent .Step1content ::-webkit-scrollbar {
-  width: 8px;
-  background-color: #ffffff;
-}
-
-.container .content .tabcontent .Step1content ::-webkit-scrollbar-thumb {
-  background-color: #ba131a;
+.container .content .tabcontent .Step1content .show {
+  display: block;
 }
 
 .container .content .tabcontent .getTrip {

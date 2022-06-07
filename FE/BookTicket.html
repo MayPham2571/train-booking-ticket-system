@@ -54,21 +54,45 @@
         <div id="Step1" class="tabcontent">
           <div id="Step1content" class="Step1content">
             <h3>FROM</h3>
-            <select name="source" id="source">
-              <option value="None">-----</option>
-              <option value="Ho Chi Minh">Ho Chi Minh</option>
-              <option value="Da Nang">Da Nang</option>
-              <option value="Ha Noi">Ha Noi</option>
-              <option value="City A">City A</option>
-            </select>
+            <div class="dropdown">
+              <input
+                type="text"
+                placeholder="Search.."
+                id="source"
+                class="myInput"
+                onkeyup="filterFunction()"
+                onclick="myFunction()"
+              />
+              <div id="dropdownSource" class="dropdown-content">
+                <p>About</p>
+                <p>Base</p>
+                <p>Blog</p>
+                <p>Contact</p>
+                <p>Custom</p>
+                <p>Support</p>
+                <p>Tools</p>
+              </div>
+            </div>
             <h3>TO</h3>
-            <select name="destination" id="destination">
-              <option value="None">-----</option>
-              <option value="Nha Trang">Nha Trang</option>
-              <option value="Hue">Hue</option>
-              <option value="Lam Dong">Lam Dong</option>
-              <option value="City B">City B</option>
-            </select>
+            <div class="dropdown">
+              <input
+                type="text"
+                placeholder="Search.."
+                id="destination"
+                class="myInput"
+                onkeyup="filterFunction2()"
+                onclick="myFunction2()"
+              />
+              <div id="dropdownDes" class="dropdown-content">
+                <p>hehe</p>
+                <p>Base</p>
+                <p>Blog</p>
+                <p>Contact</p>
+                <p>Custom</p>
+                <p>Support</p>
+                <p>Tools</p>
+              </div>
+            </div>
             <button class="search">Search</button>
           </div>
           <div class="getTrip"></div>

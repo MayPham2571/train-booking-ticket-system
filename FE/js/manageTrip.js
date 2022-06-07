@@ -31,12 +31,12 @@ $(".searchTrip").click(function (e) {
   console.log(result);
   if (result.source === "" || result.destination === "") {
     alert("Please choose source/destination");
-  }
-  postData("http://localhost:3000/api/v1/trip/", result).then((result) => {
-    console.log(result);
-    $(".list").empty();
-    result.data.forEach((value) => {
-      $(".list").append(`
+  } else {
+    postData("http://localhost:3000/api/v1/trip/", result).then((result) => {
+      console.log(result);
+      $(".list").empty();
+      result.data.forEach((value) => {
+        $(".list").append(`
       <li class="ticket${value._id}">
               <div class="line">
                 <div>
@@ -80,8 +80,9 @@ $(".searchTrip").click(function (e) {
       </button>
     </li>
       `);
+      });
     });
-  });
+  }
 });
 const deleteTicket = (evt, id) => {
   const options = {

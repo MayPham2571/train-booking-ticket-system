@@ -463,3 +463,49 @@ $(document).on("click", ".logout", function (e) {
   window.localStorage.clear();
   window.location.replace("Viewpage.html");
 });
+
+function myFunction() {
+  document.getElementById("dropdownSource").classList.toggle("show");
+}
+function myFunction2() {
+  document.getElementById("dropdownDes").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, a, i;
+  input = document.getElementById("source");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("dropdownSource");
+  a = div.getElementsByTagName("p");
+  console.log(a.innerText);
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+      console.log(a[i]);
+      a[i].addEventListener("click", () => {
+        console.log(a[i].textContent);
+      });
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+function filterFunction2() {
+  var input, filter, a, i;
+  input = document.getElementById("destination").value;
+  filter = input.toUpperCase();
+  div = document.getElementById("dropdownDes");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+      a[i].addEventListener("click", () => {
+        alert("hello");
+      });
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}

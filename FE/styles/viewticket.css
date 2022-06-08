@@ -67,12 +67,12 @@ header .hright .lg {
 }
 
 .container .head h3 {
-  background-color: #ba131a;
+  background-color: #012e6f;
   padding: 25px 55px;
   color: white;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .container .head .back i,
@@ -85,100 +85,61 @@ header .hright .lg {
 
 .container .content {
   background-color: #ffffff;
-  margin-top: -30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  margin-top: -46px;
 }
 
 .container .content h1 {
   color: #ba131a;
   text-align: center;
   padding: 20px 0px;
-  font-size: 50px;
 }
 
-.container .content h2 {
-  color: #012e6f;
-  font-size: 40px;
-  margin-top: 35px;
+.container .content .unpaid .note {
+  color: #ba131a;
+  margin-left: 10%;
 }
 
-.container .content .inside {
-  height: 800px;
-  background-color: #ffffff;
+.container .content .unpaid .ticket {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 20px;
 }
 
-.container .content .inside .box {
-  width: 1455px;
-  height: 217px;
+.container .content .unpaid .ticket .item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 20px;
   border: 2px solid #012e6f;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
-.container .content .inside .box .flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.container .content .unpaid .ticket .item div {
+  padding: 0px 10px;
+  margin: 0px 100px;
 }
 
-.container .content .inside .box .flex .rbox {
-  padding-right: 115px;
-}
-
-.container .content .inside .box .flex .rbox h4 {
-  font-size: 30px;
+.container .content .unpaid .ticket .item div h4 {
   color: #012e6f;
-  margin-bottom: 55px;
 }
 
-.container .content .inside .box .flex .lbox {
-  padding-top: 15px;
+.container .content .unpaid .ticket .item div h2 {
+  color: #ba131a;
 }
 
-.container .content .inside .box .flex .lbox input {
-  width: 536px;
-  height: 57px;
-  border-radius: 7px;
-  border: 1px solid #d8d8d8;
-  font-size: 30px;
-  margin-bottom: 30px;
-}
-
-.container .content .inside button {
+.container .content .unpaid .ticket .item button {
   color: #ffffff;
-  background-color: #ba131a;
-  border-radius: 34px;
+  background-color: #707070;
+  border-radius: 15px;
   padding: 15px 20px;
   border: none;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
 }
 /*# sourceMappingURL=viewticket.css.map */

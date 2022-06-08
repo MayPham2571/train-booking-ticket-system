@@ -47,12 +47,12 @@ header {
     margin-top: -35px;
     margin-bottom: -23px;
     h3 {
-      background-color: $primary-color2;
+      background-color: $primary-color1;
       padding: 25px 55px;
       color: white;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
-      font-size: 30px;
+      font-size: 25px;
     }
     .back {
       i,
@@ -66,79 +66,145 @@ header {
   }
   .content {
     background-color: #ffffff;
-    margin-top: -30px;
+    // height: 1000px;
+    margin-top: -23px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+
     h1 {
+      margin-top: 80px;
       color: $primary-color2;
       text-align: center;
-      padding: 20px 0px;
-      font-size: 50px;
+      // padding: 20px 0px;
     }
-    h2{
-      color: $primary-color1;
-      font-size: 40px;
-      margin-top: 35px;
-    }
-    .inside{
-      height: 800px;
-      background-color: #ffffff;
-      .box{
-        width: 1515px;
-        height: 750px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 20px;
-        border: 4px solid $primary-color1;
-      
-        .flex{
-            display: flex;
-            flex-direction: row;
-            .rbox{
-                padding-right: 115px;
-    
-                h4{
-                    font-size: 30px;
-                    color: $primary-color1;
-                    margin-bottom: 55px;
-                }
-            }
-            .lbox{
-                padding-top: 15px;
-                
-                input{
-                    width: 536px;
-                    height: 57px;
-                    border-radius: 7px;
-                    border: 1px solid #d8d8d8;
-                    font-size: 30px;
-                    margin-bottom: 30px;
-                }
-            }
+    .uncreate {
+      .note {
+        color: $primary-color2;
+        margin-left: 10%;
+      }
+      .trip {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-bottom: 20px;
+
+        .show {
+          display: none;
         }
-        // div{
-        //   display: flex;
-        //   flex-direction: column;
-        //   align-items: center;
-        //   justify-content: center;
-        // }
-        
+
+        .route {
+          display: block;
+
+          hr{
+            margin: 20px;
+            border: 2px solid $primary-color2;
+          }
+          .detail {
+            height: 500px;
+            background-color: #fff;
+            border: solid 4px $primary-color1;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-items: center;
+            justify-self: center;
+            padding: 30px;
+            margin-top: 20px;
+
+            h2 {
+              font-size: 45px;
+              color: $primary-color2;
+              text-transform: uppercase;
+              margin-top: -10px;
+              text-decoration: underline;
+              margin-bottom: 50px;
+            }
+
+            .inside {
+              display: flex;
+              flex-direction: row;
+              padding-left: 170px;
+
+              div {
+                margin-left: 80px;
+                display: flex;
+                flex-direction: column;
+
+                p {
+                  color: $primary-color1;
+                  font-size: 25px;
+                  padding-top: 50px;
+                  text-align: left;
+                  margin-left: 100px;
+                }
+
+                h3 {
+                  margin-top: -2px;
+                  margin-bottom: 312px;
+                  color: $primary-color2;
+                  text-transform: uppercase;
+                  font-size: 30px;
+                }
+
+                h4 {
+                  margin-bottom: 122.5px;
+                  margin-top: 5px;
+                  color: $primary-color1;
+                  font-size: 25px;
+                }
+
+                .icon {
+                  width: 33px;
+                  height: 380px;
+                }
+              }
+            }
+            
+          }
+        }
+        .item {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          border: 2px solid $primary-color1;
+          border-radius: 20px;
+          margin-top: 20px;
+          div {
+            padding: 0px 10px;
+            margin: 0px 100px 0px 60px;
+            h4 {
+              color: $primary-color1;
+            }
+            h2 {
+              color: $primary-color2;
+              font-size: 30px;
+            }
+          }
+          button {
+            color: #ffffff;
+            background-color: $primary-color1;
+            border-radius: 15px;
+            padding: 15px 20px;
+            border: none;
+            font-size: 20px;
+            font-style: italic;
+            margin-left: 100px;
+            font-weight: bolder;
+          }
+
+          button:hover{
+            background-color: #d8d8d8;
+            color: $primary-color1;
+            font-weight: bolder;
+            cursor: pointer;
+            border: 2px solid $primary-color1;
+          }
+        }
       }
-      button {
-        color: #ffffff;
-        background-color: $primary-color2;
-        border-radius: 34px;
-        padding: 15px 20px;
-        border: none;
-        font-size: 30px;
-        font-weight: bold;
-      }
-      
     }
-    
   }
 }

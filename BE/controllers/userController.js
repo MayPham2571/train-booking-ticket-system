@@ -114,5 +114,6 @@ exports.rechargeBalance = catchAsync(async (req, res) => {
   res.status(200).json({
     success: true,
     recharge,
+    message: `Successful. The new balance is ${newUser.balance}`
   });
 });

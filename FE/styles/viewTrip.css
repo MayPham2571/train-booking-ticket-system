@@ -67,12 +67,12 @@ header .hright .lg {
 }
 
 .container .head h3 {
-  background-color: #ba131a;
+  background-color: #012e6f;
   padding: 25px 55px;
   color: white;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .container .head .back i,
@@ -85,61 +85,80 @@ header .hright .lg {
 
 .container .content {
   background-color: #ffffff;
-  margin-top: -30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.container .content h1 {
-  color: #ba131a;
+  margin-top: -23px;
   text-align: center;
-  padding: 20px 0px;
-  font-size: 50px;
-}
-
-.container .content h2 {
-  color: #012e6f;
-  font-size: 40px;
-  margin-top: 35px;
-}
-
-.container .content .inside {
-  height: 800px;
-  background-color: #ffffff;
-}
-
-.container .content .inside .box {
-  width: 1515px;
-  height: 750px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 20px;
-  border: 4px solid #012e6f;
+  justify-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.container .content .inside .box .flex {
+.container .content h1 {
+  margin-top: 80px;
+  color: #ba131a;
+  text-align: center;
+}
+
+.container .content .uncreate .note {
+  color: #ba131a;
+  margin-left: 10%;
+}
+
+.container .content .uncreate .trip {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 20px;
+}
+
+.container .content .uncreate .trip .show {
+  display: none;
+}
+
+.container .content .uncreate .trip .route {
+  display: block;
+}
+
+.container .content .uncreate .trip .route hr {
+  margin: 20px;
+  border: 2px solid #ba131a;
+}
+
+.container .content .uncreate .trip .route .detail {
+  height: 500px;
+  background-color: #fff;
+  border: solid 4px #012e6f;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  justify-items: center;
+  justify-self: center;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.container .content .uncreate .trip .route .detail h2 {
+  font-size: 45px;
+  color: #ba131a;
+  text-transform: uppercase;
+  margin-top: -10px;
+  text-decoration: underline;
+  margin-bottom: 50px;
+}
+
+.container .content .uncreate .trip .route .detail .inside {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,38 +166,98 @@ header .hright .lg {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding-left: 170px;
 }
 
-.container .content .inside .box .flex .rbox {
-  padding-right: 115px;
+.container .content .uncreate .trip .route .detail .inside div {
+  margin-left: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.container .content .inside .box .flex .rbox h4 {
-  font-size: 30px;
+.container .content .uncreate .trip .route .detail .inside div p {
   color: #012e6f;
-  margin-bottom: 55px;
+  font-size: 25px;
+  padding-top: 50px;
+  text-align: left;
+  margin-left: 100px;
 }
 
-.container .content .inside .box .flex .lbox {
-  padding-top: 15px;
-}
-
-.container .content .inside .box .flex .lbox input {
-  width: 536px;
-  height: 57px;
-  border-radius: 7px;
-  border: 1px solid #d8d8d8;
+.container .content .uncreate .trip .route .detail .inside div h3 {
+  margin-top: -2px;
+  margin-bottom: 312px;
+  color: #ba131a;
+  text-transform: uppercase;
   font-size: 30px;
-  margin-bottom: 30px;
 }
 
-.container .content .inside button {
+.container .content .uncreate .trip .route .detail .inside div h4 {
+  margin-bottom: 122.5px;
+  margin-top: 5px;
+  color: #012e6f;
+  font-size: 25px;
+}
+
+.container .content .uncreate .trip .route .detail .inside div .icon {
+  width: 33px;
+  height: 380px;
+}
+
+.container .content .uncreate .trip .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #012e6f;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.container .content .uncreate .trip .item div {
+  padding: 0px 10px;
+  margin: 0px 100px 0px 60px;
+}
+
+.container .content .uncreate .trip .item div h4 {
+  color: #012e6f;
+}
+
+.container .content .uncreate .trip .item div h2 {
+  color: #ba131a;
+  font-size: 30px;
+}
+
+.container .content .uncreate .trip .item button {
   color: #ffffff;
-  background-color: #ba131a;
-  border-radius: 34px;
+  background-color: #012e6f;
+  border-radius: 15px;
   padding: 15px 20px;
   border: none;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  font-style: italic;
+  margin-left: 100px;
+  font-weight: bolder;
+}
+
+.container .content .uncreate .trip .item button:hover {
+  background-color: #d8d8d8;
+  color: #012e6f;
+  font-weight: bolder;
+  cursor: pointer;
+  border: 2px solid #012e6f;
 }
 /*# sourceMappingURL=viewTrip.css.map */

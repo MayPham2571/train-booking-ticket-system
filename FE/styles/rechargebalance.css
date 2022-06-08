@@ -139,7 +139,7 @@ header .hright .lg {
   border: 4px solid #012e6f;
 }
 
-.container .content .inside .box .flex {
+.container .content .inside .box .balance {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -149,36 +149,65 @@ header .hright .lg {
           flex-direction: row;
 }
 
-.container .content .inside .box .flex .rbox {
-  padding-right: 115px;
+.container .content .inside .box .balance h2 {
+  margin-right: 30px;
 }
 
-.container .content .inside .box .flex .rbox h4 {
-  font-size: 30px;
+.container .content .inside .box form {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .content .inside .box form .line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1000px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.container .content .inside .box form .line label {
   color: #012e6f;
-  margin-bottom: 55px;
-}
-
-.container .content .inside .box .flex .lbox {
-  padding-top: 15px;
-}
-
-.container .content .inside .box .flex .lbox input {
-  width: 536px;
-  height: 57px;
-  border-radius: 7px;
-  border: 1px solid #d8d8d8;
   font-size: 30px;
-  margin-bottom: 30px;
+  font-weight: bold;
 }
 
-.container .content .inside button {
+.container .content .inside .box form .line input[type="text"], .container .content .inside .box form .line input[type="password"], .container .content .inside .box form .line input[type="email"], .container .content .inside .box form .line input[type="date"], .container .content .inside .box form .line input[type="number"] {
+  border: 2px solid #ba131a;
+  width: 614px;
+  height: 66px;
+  border-radius: 14px;
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container .content .inside .box button {
   color: #ffffff;
   background-color: #ba131a;
   border-radius: 34px;
   padding: 15px 20px;
   border: none;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
 /*# sourceMappingURL=rechargebalance.css.map */

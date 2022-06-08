@@ -47,12 +47,12 @@ header {
     margin-top: -35px;
     margin-bottom: -23px;
     h3 {
-      background-color: $primary-color2;
+      background-color: $primary-color1;
       padding: 25px 55px;
       color: white;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
-      font-size: 30px;
+      font-size: 25px;
     }
     .back {
       i,
@@ -66,79 +66,49 @@ header {
   }
   .content {
     background-color: #ffffff;
-    margin-top: -30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    margin-top: -46px;
     h1 {
       color: $primary-color2;
       text-align: center;
       padding: 20px 0px;
-      font-size: 50px;
     }
-    h2{
-      color: $primary-color1;
-      font-size: 40px;
-      margin-top: 35px;
-    }
-    .inside{
-      height: 800px;
-      background-color: #ffffff;
-      .box{
-        width: 1455px;
-        height: 217px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 20px;
-        border: 2px solid $primary-color1;
-      
-        .flex{
-            display: flex;
-            flex-direction: row;
-            .rbox{
-                padding-right: 115px;
-    
-                h4{
-                    font-size: 30px;
-                    color: $primary-color1;
-                    margin-bottom: 55px;
-                }
+    .unpaid {
+      .note {
+        color: $primary-color2;
+        margin-left: 10%;
+      }
+      .ticket {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-bottom: 20px;
+        .item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          border: 2px solid $primary-color1;
+          border-radius: 20px;
+          margin-bottom: 20px;
+          div {
+            padding: 0px 10px;
+            margin: 0px 100px;
+            h4 {
+              color: $primary-color1;
             }
-            .lbox{
-                padding-top: 15px;
-                
-                input{
-                    width: 536px;
-                    height: 57px;
-                    border-radius: 7px;
-                    border: 1px solid #d8d8d8;
-                    font-size: 30px;
-                    margin-bottom: 30px;
-                }
+            h2 {
+              color: $primary-color2;
             }
+          }
+          button {
+            color: #ffffff;
+            background-color: #707070;
+            border-radius: 15px;
+            padding: 15px 20px;
+            border: none;
+            font-size: 20px;
+            font-style: italic;
+          }
         }
-        // div{
-        //   display: flex;
-        //   flex-direction: column;
-        //   align-items: center;
-        //   justify-content: center;
-        // }
-        
       }
-      button {
-        color: #ffffff;
-        background-color: $primary-color2;
-        border-radius: 34px;
-        padding: 15px 20px;
-        border: none;
-        font-size: 30px;
-        font-weight: bold;
-      }
-      
     }
-    
   }
 }

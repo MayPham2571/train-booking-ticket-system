@@ -20,6 +20,9 @@ const RechargeSchema = new Schema(
     CVV: {
       type: Number,
       required: [true, "CVV is required"],
+      minlength: [3, "Must have at least 3 numbers"],
+      maxlength: [4, "Must have maximum 4 numbers"],
+      match: /[0-9]*/,
     },
     expiredDate: {
       type: Date,

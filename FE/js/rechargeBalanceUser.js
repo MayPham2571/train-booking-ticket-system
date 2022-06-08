@@ -37,7 +37,7 @@ getData(`http://localhost:3000/api/v1/user/detail/${id}`).then((result) => {
             />
         </div>
         <div class="right">
-            <a class="lg" href="ViewPage.html">Logout</a>
+            <a class="lg" href="FirstPage.html">Logout</a>
         </div>
     </header>
     <main>

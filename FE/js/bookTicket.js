@@ -27,9 +27,9 @@ $(".search").click(function (e) {
     source: document.getElementById("source").value,
     destination: document.getElementById("destination").value,
   };
-  if (resultdata.source === "None") {
+  if (resultdata.source === "") {
     alert("Please choose source !");
-  } else if (resultdata.destination === "None") {
+  } else if (resultdata.destination === "") {
     alert("Please choose destination !");
   } else {
     console.log(resultdata.source);
@@ -439,24 +439,29 @@ const loadDes = () => {
 loadSource();
 loadDes();
 function myFunction() {
-  document.getElementById("dropdownSource").classList.toggle("show");
+  $("#dropdownSource").toggle();
+  $("#dropdownDes").hide();
+  //document.getElementById("dropdownSource").classList.toggle("show");
   const list = document.getElementById("dropdownSource");
   p = list.getElementsByTagName("p");
   for (i = 0; i < p.length; i++) {
     $(`.s${i + 1}`).click(function (e) {
       input = document.getElementById("source");
       input.value = $(this).text();
+      $("#dropdownSource").hide();
     });
   }
 }
 function myFunction2() {
-  document.getElementById("dropdownDes").classList.toggle("show");
+  $("#dropdownDes").toggle();
+  $("#dropdownSource").hide();
   const list = document.getElementById("dropdownDes");
   p = list.getElementsByTagName("p");
   for (i = 0; i < p.length; i++) {
     $(`.d${i + 1}`).click(function (e) {
       input = document.getElementById("destination");
       input.value = $(this).text();
+      $("#dropdownDes").hide();
     });
   }
 }
@@ -480,14 +485,11 @@ function filterFunction2() {
   input = document.getElementById("destination").value;
   filter = input.toUpperCase();
   div = document.getElementById("dropdownDes");
-  a = div.getElementsByTagName("a");
+  a = div.getElementsByTagName("p");
   for (i = 0; i < a.length; i++) {
     txtValue = a[i].textContent || a[i].innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       a[i].style.display = "";
-      a[i].addEventListener("click", () => {
-        alert("hello");
-      });
     } else {
       a[i].style.display = "none";
     }

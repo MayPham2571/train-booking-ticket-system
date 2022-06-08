@@ -191,9 +191,6 @@ header .hright .lg {
       -ms-flex-align: center;
           align-items: center;
   /* The container <div> - needed to position the dropdown content */
-  /* Dropdown Content (Hidden by Default) */
-  /* Links inside the dropdown */
-  /* Change color of dropdown links on hover */
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 }
 
@@ -215,10 +212,32 @@ header .hright .lg {
   border: 2px solid #ba131a;
   border-radius: 14px;
   margin: 0px 30px;
+  font-size: 25px;
+  color: #012e6f;
 }
 
 .container .content .tabcontent .Step1content input:focus {
   outline: 2px solid #ba131a;
+}
+
+.container .content .tabcontent .Step1content input::-webkit-input-placeholder {
+  color: #012e6f;
+  text-align: center;
+}
+
+.container .content .tabcontent .Step1content input:-ms-input-placeholder {
+  color: #012e6f;
+  text-align: center;
+}
+
+.container .content .tabcontent .Step1content input::-ms-input-placeholder {
+  color: #012e6f;
+  text-align: center;
+}
+
+.container .content .tabcontent .Step1content input::placeholder {
+  color: #012e6f;
+  text-align: center;
 }
 
 .container .content .tabcontent .Step1content .dropdown {
@@ -226,27 +245,30 @@ header .hright .lg {
   display: inline-block;
 }
 
-.container .content .tabcontent .Step1content .dropdown-content {
+.container .content .tabcontent .Step1content .dropdown .dropdown-content {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 72px;
   left: 35px;
   background-color: #f6f6f6;
   min-width: 230px;
-  border: 1px solid #ddd;
-  z-index: 1;
+  border: 1px solid #ba131a;
 }
 
-.container .content .tabcontent .Step1content .dropdown-content p {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+.container .content .tabcontent .Step1content .dropdown .dropdown-content p {
+  color: #ba131a;
+  font-size: 25px;
+  padding: 8px 16px;
+  margin: 0px;
   display: block;
   cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.container .content .tabcontent .Step1content .dropdown-content p:hover {
-  background-color: #f1f1f1;
+.container .content .tabcontent .Step1content .dropdown .dropdown-content p:hover {
+  background-color: #ba131a;
+  color: white;
 }
 
 .container .content .tabcontent .Step1content .show {
@@ -254,6 +276,7 @@ header .hright .lg {
 }
 
 .container .content .tabcontent .getTrip {
+  margin-top: 20px;
   font-size: 20px;
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 }

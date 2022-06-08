@@ -54,21 +54,33 @@
         <div id="Step1" class="tabcontent">
           <div id="Step1content" class="Step1content">
             <h3>FROM</h3>
-            <select name="source" id="source">
-              <option value="None">-----</option>
-              <option value="Ho Chi Minh">Ho Chi Minh</option>
-              <option value="Da Nang">Da Nang</option>
-              <option value="Ha Noi">Ha Noi</option>
-              <option value="City A">City A</option>
-            </select>
+            <div class="dropdown">
+              <input
+                type="text"
+                placeholder="--SOURCE--"
+                id="source"
+                class="myInput"
+                onkeyup="filterFunction()"
+                onclick="myFunction()"
+              />
+              <div id="dropdownSource" class="dropSource dropdown-content">
+                <p>---</p>
+              </div>
+            </div>
             <h3>TO</h3>
-            <select name="destination" id="destination">
-              <option value="None">-----</option>
-              <option value="Nha Trang">Nha Trang</option>
-              <option value="Hue">Hue</option>
-              <option value="Lam Dong">Lam Dong</option>
-              <option value="Phan Rang">Phan Rang</option>
-            </select>
+            <div class="dropdown">
+              <input
+                type="text"
+                placeholder="--DESTINATION--"
+                id="destination"
+                class="myInput"
+                onkeyup="filterFunction2()"
+                onclick="myFunction2()"
+              />
+              <div id="dropdownDes" class="dropDes dropdown-content">
+                <p>---</p>
+              </div>
+            </div>
             <button class="search">Search</button>
           </div>
           <div class="getTrip"></div>
@@ -134,6 +146,7 @@
           >
             Continue Book
           </button>
+          <a href="Payment.html">Payment</a>
         </div>
       </div>
     </div>

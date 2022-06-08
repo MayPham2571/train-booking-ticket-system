@@ -138,8 +138,9 @@ exports.checkBalance = catchAsync(async (req, res) => {
       }
     }
     await EmailService.sendMail(
+      process.env.EMAIL,
       user.email,
-      "OTP verification",
+      "[OTP verification] - FROM TCAT COMPANY",
       `Your OTP code: ${otpcode}`
     );
     res.status(200).json({

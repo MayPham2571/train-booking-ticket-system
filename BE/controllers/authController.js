@@ -120,8 +120,9 @@ exports.resetPassword = catchAsync(async (req, res) => {
   }
   // await Promise.all([user.save(), tokenUser.remove()]);//ko thực hiện cùng lúc đc
   await EmailService.sendMail(
+    process.env.EMAIL,
     user.email,
-    "Success Reset password",
+    "[FROM TCAT COMPANY] - Success Reset password",
     "Your password is successfully reset"
   );
   res.status(200).json({
@@ -148,8 +149,9 @@ exports.forgetPassword = catchAsync(async (req, res) => {
   });
   const link = `${process.env.FRONT_END_URL}:5500/FE/ResetPassword.html?token=${tokenReset}&userId=${existEmail._id}`;
   await EmailService.sendMail(
+    process.env.EMAIL,
     email,
-    "Reset password",
+    "[Reset password] - FROM TCAT COMPANY",
     `Here is the link to reset your password: ${link}`
   );
   res.status(200).json({

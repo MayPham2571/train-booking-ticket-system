@@ -109,3 +109,29 @@ exports.getTripById = catchAsync(async (req, res) => {
     data,
   });
 });
+exports.getSource = catchAsync(async (req, res) => {
+  const data = await Trip.find();
+  let newData = [];
+  data.forEach((element) => {
+    if (!newData.includes(element.source)) {
+      newData.push(element.source);
+    }
+  });
+  res.status(200).json({
+    success: true,
+    newData,
+  });
+});
+exports.getDestination = catchAsync(async (req, res) => {
+  const data = await Trip.find();
+  let newData = [];
+  data.forEach((element) => {
+    if (!newData.includes(element.destination)) {
+      newData.push(element.destination);
+    }
+  });
+  res.status(200).json({
+    success: true,
+    newData,
+  });
+});

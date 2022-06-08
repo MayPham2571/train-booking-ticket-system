@@ -159,6 +159,7 @@ header {
           border: 2px solid $primary-color2;
           border-radius: 14px;
           margin: 0px 30px;
+          font-size: 25px;
           &:focus {
             outline: 2px solid $primary-color2;
           }
@@ -167,33 +168,27 @@ header {
         .dropdown {
           position: relative;
           display: inline-block;
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 35px;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            border: 1px solid $primary-color2;
+            z-index: 1;
+            p {
+              color: black;
+              font-size: 20px;
+              padding: 12px 16px;
+              display: block;
+              cursor: pointer;
+              &:hover {
+                background-color: $primary-color2;
+              }
+            }
+          }
         }
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          top: 60px;
-          left: 35px;
-          background-color: #f6f6f6;
-          min-width: 230px;
-          border: 1px solid #ddd;
-          z-index: 1;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content p {
-          color: black;
-          padding: 12px 16px;
-          text-decoration: none;
-          display: block;
-          cursor: pointer;
-        }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content p:hover {
-          background-color: #f1f1f1;
-        }
-
         /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
         .show {
           display: block;

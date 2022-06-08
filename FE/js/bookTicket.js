@@ -410,82 +410,66 @@ const eventButton = () => {
 };
 eventButton();
 loadSourceDes();
-// ---------------------Select--------------------------------//
-$("select").each(function () {
-  var $this = $(this),
-    selectOptions = $(this).children("option").length;
-
-  $this.addClass("hide-select");
-  $this.wrap('<div class="select"></div>');
-  $this.after('<div class="custom-select"></div>');
-
-  var $customSelect = $this.next("div.custom-select");
-  $customSelect.text($this.children("option").eq(0).text());
-
-  var $optionlist = $("<ul />", {
-    class: "select-options",
-  }).insertAfter($customSelect);
-
-  for (var i = 0; i < selectOptions; i++) {
-    $("<li />", {
-      text: $this.children("option").eq(i).text(),
-      rel: $this.children("option").eq(i).val(),
-    }).appendTo($optionlist);
-  }
-
-  var $optionlistItems = $optionlist.children("li");
-
-  $customSelect.click(function (e) {
-    e.stopPropagation();
-    $("div.custom-select.active")
-      .not(this)
-      .each(function () {
-        $(this).removeClass("active").next("ul.select-options").hide();
-      });
-    $(this).toggleClass("active").next("ul.select-options").slideToggle();
-  });
-
-  $optionlistItems.click(function (e) {
-    e.stopPropagation();
-    $customSelect.text($(this).text()).removeClass("active");
-    $this.val($(this).attr("rel"));
-    $optionlist.hide();
-  });
-
-  $(document).click(function () {
-    $customSelect.removeClass("active");
-    $optionlist.hide();
-  });
-});
 
 $(document).on("click", ".logout", function (e) {
   e.preventDefault();
   window.localStorage.clear();
-  window.location.replace("Viewpage.html");
+  window.location.replace("FirstPage.html");
 });
 
+// load source
+const loadSource = () => {
+  getData("http://localhost:3000/api/v1/trip/getSource").then((result) => {
+    for (i = 0; i < result.newData.length; i++) {
+      $(".dropSource").append(`
+      <p class="s${i + 1}">${result.newData[i]}</p>
+      `);
+    }
+  });
+};
+const loadDes = () => {
+  getData("http://localhost:3000/api/v1/trip/getDestination").then((result) => {
+    for (i = 0; i < result.newData.length; i++) {
+      $(".dropDes").append(`
+      <p class="d${i + 1}">${result.newData[i]}</p>
+      `);
+    }
+  });
+};
+loadSource();
+loadDes();
 function myFunction() {
   document.getElementById("dropdownSource").classList.toggle("show");
+  const list = document.getElementById("dropdownSource");
+  p = list.getElementsByTagName("p");
+  for (i = 0; i < p.length; i++) {
+    $(`.s${i + 1}`).click(function (e) {
+      input = document.getElementById("source");
+      input.value = $(this).text();
+    });
+  }
 }
 function myFunction2() {
   document.getElementById("dropdownDes").classList.toggle("show");
+  const list = document.getElementById("dropdownDes");
+  p = list.getElementsByTagName("p");
+  for (i = 0; i < p.length; i++) {
+    $(`.d${i + 1}`).click(function (e) {
+      input = document.getElementById("destination");
+      input.value = $(this).text();
+    });
+  }
 }
-
 function filterFunction() {
   var input, filter, a, i;
   input = document.getElementById("source");
   filter = input.value.toUpperCase();
   div = document.getElementById("dropdownSource");
   a = div.getElementsByTagName("p");
-  console.log(a.innerText);
   for (i = 0; i < a.length; i++) {
     txtValue = a[i].textContent || a[i].innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1) {
       a[i].style.display = "";
-      console.log(a[i]);
-      a[i].addEventListener("click", () => {
-        console.log(a[i].textContent);
-      });
     } else {
       a[i].style.display = "none";
     }

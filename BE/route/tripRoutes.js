@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.post("/", jwtAuth, tripController.getTrip);
 router.get("/getAllTrip", jwtAuth, tripController.getAllTrip);
+router.get("/getSource", jwtAuth, tripController.getSource);
+router.get("/getDestination", jwtAuth, tripController.getDestination);
 router.get(
   "/getTripById/:id",
   jwtAuth,

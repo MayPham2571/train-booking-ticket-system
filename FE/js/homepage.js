@@ -146,6 +146,6 @@ const loadHomepage = () => {
 $(document).on("click", ".logout", function (e) {
   e.preventDefault();
   window.localStorage.clear();
-  window.location.replace("Viewpage.html");
+  window.location.replace("FirstPage.html");
 });
 loadHomepage();

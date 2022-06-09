@@ -91,7 +91,7 @@ const deleteTicket = (evt, id) => {
   fetch(url, options)
     .then((response) => response.json())
     .then((result) => {
-      alert(result.message);
+      alert("Delete successfully");
       $(`.ticket${id}`).remove();
     });
 };

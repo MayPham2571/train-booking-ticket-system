@@ -45,6 +45,8 @@ $(".Pay").click(function (e) {
         console.log(result);
         if (result.message === "Cannot read property 'otp' of null") {
           alert("Have paid !");
+        } else if (result.message === "OTP code is not corrrect !") {
+          alert(result.message);
         } else {
           alert(result.message);
           location.replace("http://127.0.0.1:5500/FE/Payment.html");
